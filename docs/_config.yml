@@ -1,7 +1,7 @@
 title: "Latte & Lounge"
 tagline: "A sacred pause before the world gets loud."
 description: "Devotionals, prayer, and honest conversations for professional women."
-url: "https://YOUR-GITHUB-USERNAME.github.io"
+url: "https://jeffthomasiii.github.io"
 baseurl: "/latte-lounge-poc"
 
 permalink: /blog/:title/
