@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-logo" href="{{ '/' | relative_url }}">
+      <span class="logo-mark">☕</span>
+      <span class="logo-text">Latte & Lounge</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      {% for item in site.data.navigation.main %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
