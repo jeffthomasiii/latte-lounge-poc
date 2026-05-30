@@ -3,34 +3,18 @@ layout: home
 title: Home
 ---
 
-Latte & Lounge is a faith-based lifestyle space created for professional Christian women who want to meet with God before the demands of the day begin.
+Latte & Lounge was created for the woman who wakes up already carrying responsibility.
 
-Before the meetings, the inbox, the deadlines, the household needs, and the quiet weight of responsibility, this is an invitation to pause, breathe, pray, and begin the day anchored instead of anxious.
+Before the meetings, the inbox, the deadlines, the household needs, and the quiet emotional weight of being needed, this is an invitation to pause with God first.
 
-## Choose your morning rhythm
+This is not about creating a perfect morning routine. It is about making space to breathe, pray, reflect, and begin the day anchored instead of anxious.
 
-### Before the World Wakes
+## A quieter way to begin
 
-Morning devotionals rooted in Scripture, reflection, surrender, and peace.
+Start with Scripture.
 
-### Sacred Pause
+Sit with an honest reflection.
 
-Short prayers for overwhelming mornings, difficult conversations, leadership pressure, emotional exhaustion, and quiet resets.
+Pray before the pressure begins.
 
-### Faith in the Boardroom
-
-Faith-filled encouragement for women navigating leadership, work, calling, integrity, pressure, and purpose.
-
-### Lounge Conversations
-
-Honest reflections about real life, real responsibility, and the quiet places where faith meets emotional honesty.
-
-## Start here
-
-If your morning usually begins with everyone else needing something from you, Latte & Lounge is a gentle reminder that you are invited to meet with God first.
-
-Not perfectly.
-
-Not performatively.
-
-Just honestly.
+Then step into the day from a place of peace instead of panic.
