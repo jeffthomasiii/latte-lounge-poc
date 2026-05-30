@@ -2,12 +2,16 @@
 layout: default
 ---
 
-<section class="home-hero editorial-hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Latte & Lounge</p>
-      <h1>A sacred pause before the world gets loud.</h1>
-      <p class="hero-subtitle">
+<section class="home-hero quiet-hero">
+  <div class="container quiet-hero-grid">
+    <div class="quiet-hero-copy">
+      <img
+        class="hero-logo-image"
+        src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}"
+        alt="Latte & Lounge - A sacred pause before the world gets loud."
+      >
+
+      <p class="hero-subtitle quiet-subtitle">
         Devotionals, prayer, and honest conversations for professional women who want to begin their day anchored instead of anxious.
       </p>
 
@@ -17,92 +21,49 @@ layout: default
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="Morning rhythm preview">
-      <p class="eyebrow">Morning Rhythm</p>
-      <h2>Before the inbox, meet with God.</h2>
-      <ul class="ritual-list">
-        <li><span>01</span> Pause</li>
-        <li><span>02</span> Pray</li>
-        <li><span>03</span> Begin anchored</li>
-      </ul>
-    </aside>
+    <figure class="hero-photo-card">
+      <img
+        src="{{ '/assets/images/home-hero-latte-journal.jpg' | relative_url }}"
+        alt="Latte beside a journal in soft morning light"
+      >
+      <figcaption>Coffee. Prayer. A quiet beginning.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="intro-section">
+<section class="quiet-intro">
   <div class="container narrow">
     {{ content }}
   </div>
 </section>
 
-<section class="pathway-section">
+<section class="quiet-paths">
   <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">Explore</p>
-      <h2>Choose your sacred pause.</h2>
-      <p>
-        Start with a devotional, listen to a short reflection, or find a prayer for the moment you are facing.
-      </p>
-    </div>
+    <p class="eyebrow">Start Here</p>
 
-    <div class="pathway-grid">
-      <a class="pathway-card" href="{{ '/blog/' | relative_url }}">
-        <p class="eyebrow">Read</p>
-        <h3>Blog</h3>
-        <p>Scripture-centered reflections and honest encouragement for real mornings.</p>
+    <div class="quiet-link-list">
+      <a href="{{ '/blog/' | relative_url }}">
+        <span>Read</span>
+        <strong>Morning reflections and devotionals</strong>
       </a>
 
-      <a class="pathway-card" href="{{ '/podcast/' | relative_url }}">
-        <p class="eyebrow">Listen</p>
-        <h3>Podcast</h3>
-        <p>Short, faith-filled conversations for the morning before the world gets loud.</p>
+      <a href="{{ '/podcast/' | relative_url }}">
+        <span>Listen</span>
+        <strong>Short faith-filled conversations</strong>
       </a>
 
-      <a class="pathway-card" href="{{ '/prayer-resources/' | relative_url }}">
-        <p class="eyebrow">Pray</p>
-        <h3>Prayer Resources</h3>
-        <p>Simple prayers for pressure, peace, leadership, and emotional reset.</p>
+      <a href="{{ '/prayer-resources/' | relative_url }}">
+        <span>Pray</span>
+        <strong>Simple prayers for real mornings</strong>
       </a>
     </div>
   </div>
 </section>
 
-<section class="featured-section">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">Featured</p>
-      <h2>Start with what your morning needs.</h2>
-    </div>
-
-    <div class="featured-grid">
-      {% assign latest_post = site.posts | first %}
-      {% if latest_post %}
-      <article class="listing-card">
-        <p class="eyebrow">Latest Reflection</p>
-        <h2><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h2>
-        <p>{{ latest_post.excerpt | strip_html | truncate: 160 }}</p>
-      </article>
-      {% endif %}
-
-      {% assign latest_prayer = site.prayers | first %}
-      {% if latest_prayer %}
-      <article class="listing-card">
-        <p class="eyebrow">Prayer Resource</p>
-        <h2><a href="{{ latest_prayer.url | relative_url }}">{{ latest_prayer.title }}</a></h2>
-        <p>{{ latest_prayer.excerpt | strip_html | truncate: 160 }}</p>
-      </article>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-<section class="subscribe-band">
-  <div class="container narrow">
-    <p class="eyebrow">Coming Soon</p>
-    <h2>Begin your day anchored.</h2>
-    <p>
-      Subscribe for devotionals, prayers, and honest reflections created for professional women who want to meet with God before the demands of life begin.
-    </p>
-    <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
+<section class="mood-section">
+  <div class="container mood-grid">
+    <img src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
+    <img src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
+    <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
   </div>
 </section>
