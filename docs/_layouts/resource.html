@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="prayer-resource">
+  <div class="container narrow">
+    <p class="eyebrow">Prayer Resource</p>
+    <h1>{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+      <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
