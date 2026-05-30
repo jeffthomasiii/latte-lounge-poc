@@ -2,23 +2,107 @@
 layout: default
 ---
 
-<section class="home-hero">
-  <div class="container">
-    <p class="eyebrow">Latte & Lounge</p>
-    <h1>A sacred pause before the world gets loud.</h1>
-    <p class="hero-subtitle">
-      Devotionals, prayer, and honest conversations for professional women who want to begin their day anchored instead of anxious.
-    </p>
+<section class="home-hero editorial-hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Latte & Lounge</p>
+      <h1>A sacred pause before the world gets loud.</h1>
+      <p class="hero-subtitle">
+        Devotionals, prayer, and honest conversations for professional women who want to begin their day anchored instead of anxious.
+      </p>
 
-    <div class="hero-actions">
-      <a class="button primary" href="{{ '/blog/' | relative_url }}">Read the Blog</a>
-      <a class="button secondary" href="{{ '/prayer-resources/' | relative_url }}">Find a Prayer</a>
+      <div class="hero-actions">
+        <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Begin Anchored</a>
+        <a class="button secondary" href="{{ '/prayer-resources/' | relative_url }}">Find a Prayer</a>
+      </div>
     </div>
+
+    <aside class="hero-card" aria-label="Morning rhythm preview">
+      <p class="eyebrow">Morning Rhythm</p>
+      <h2>Before the inbox, meet with God.</h2>
+      <ul class="ritual-list">
+        <li><span>01</span> Pause</li>
+        <li><span>02</span> Pray</li>
+        <li><span>03</span> Begin anchored</li>
+      </ul>
+    </aside>
   </div>
 </section>
 
 <section class="intro-section">
   <div class="container narrow">
     {{ content }}
+  </div>
+</section>
+
+<section class="pathway-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Explore</p>
+      <h2>Choose your sacred pause.</h2>
+      <p>
+        Start with a devotional, listen to a short reflection, or find a prayer for the moment you are facing.
+      </p>
+    </div>
+
+    <div class="pathway-grid">
+      <a class="pathway-card" href="{{ '/blog/' | relative_url }}">
+        <p class="eyebrow">Read</p>
+        <h3>Blog</h3>
+        <p>Scripture-centered reflections and honest encouragement for real mornings.</p>
+      </a>
+
+      <a class="pathway-card" href="{{ '/podcast/' | relative_url }}">
+        <p class="eyebrow">Listen</p>
+        <h3>Podcast</h3>
+        <p>Short, faith-filled conversations for the morning before the world gets loud.</p>
+      </a>
+
+      <a class="pathway-card" href="{{ '/prayer-resources/' | relative_url }}">
+        <p class="eyebrow">Pray</p>
+        <h3>Prayer Resources</h3>
+        <p>Simple prayers for pressure, peace, leadership, and emotional reset.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Featured</p>
+      <h2>Start with what your morning needs.</h2>
+    </div>
+
+    <div class="featured-grid">
+      {% assign latest_post = site.posts | first %}
+      {% if latest_post %}
+      <article class="listing-card">
+        <p class="eyebrow">Latest Reflection</p>
+        <h2><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h2>
+        <p>{{ latest_post.excerpt | strip_html | truncate: 160 }}</p>
+      </article>
+      {% endif %}
+
+      {% assign latest_prayer = site.prayers | first %}
+      {% if latest_prayer %}
+      <article class="listing-card">
+        <p class="eyebrow">Prayer Resource</p>
+        <h2><a href="{{ latest_prayer.url | relative_url }}">{{ latest_prayer.title }}</a></h2>
+        <p>{{ latest_prayer.excerpt | strip_html | truncate: 160 }}</p>
+      </article>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="subscribe-band">
+  <div class="container narrow">
+    <p class="eyebrow">Coming Soon</p>
+    <h2>Begin your day anchored.</h2>
+    <p>
+      Subscribe for devotionals, prayers, and honest reflections created for professional women who want to meet with God before the demands of life begin.
+    </p>
+    <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
   </div>
 </section>
