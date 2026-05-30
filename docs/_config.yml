@@ -1,0 +1,34 @@
+title: "Latte & Lounge"
+tagline: "A sacred pause before the world gets loud."
+description: "Devotionals, prayer, and honest conversations for professional women."
+url: "https://YOUR-GITHUB-USERNAME.github.io"
+baseurl: "/latte-lounge-poc"
+
+permalink: /blog/:title/
+
+collections:
+  podcast:
+    output: true
+    permalink: /podcast/:name/
+  prayers:
+    output: true
+    permalink: /prayer-resources/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "podcast"
+    values:
+      layout: podcast
+  - scope:
+      path: ""
+      type: "prayers"
+    values:
+      layout: resource
+
+markdown: kramdown
