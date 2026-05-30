@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="container narrow">
+    <p class="eyebrow">{{ page.category }}</p>
+    <h1>{{ page.title }}</h1>
+
+    {% if page.date %}
+      <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
