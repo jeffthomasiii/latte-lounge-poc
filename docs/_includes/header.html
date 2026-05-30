@@ -1,8 +1,21 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="site-logo" href="{{ '/' | relative_url }}">
-      <span class="logo-mark">☕</span>
-      <span class="logo-text">Latte & Lounge</span>
+    <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="Latte & Lounge home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img" focusable="false">
+          <path class="steam" d="M24 17c-3-4 3-6 0-10" />
+          <path class="steam" d="M32 17c-3-4 3-6 0-10" />
+          <path class="steam" d="M40 17c-3-4 3-6 0-10" />
+          <path class="cup" d="M18 25h28v12c0 8-6 14-14 14s-14-6-14-14V25z" />
+          <path class="cup" d="M46 29h4c4 0 7 3 7 7s-3 7-7 7h-5" />
+          <path class="saucer" d="M17 54h32" />
+        </svg>
+      </span>
+
+      <span class="logo-lockup">
+        <span class="logo-text">Latte <span class="amp">&amp;</span> Lounge</span>
+        <span class="logo-tagline">A sacred pause before the world gets loud.</span>
+      </span>
     </a>
 
     <nav class="site-nav" aria-label="Main navigation">
