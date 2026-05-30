@@ -7,6 +7,12 @@ subtitle: "Receive devotionals, prayers, and reflections for the morning before 
 
 Begin your day anchored instead of anxious.
 
-Subscribe to receive faith-filled encouragement, prayer resources, and honest reflections created for professional women who want to meet with God before the demands of life begin.
+The Latte & Lounge email list will be created for professional women who want gentle, faith-filled encouragement before the demands of life begin.
+
+You can expect devotionals, prayer resources, honest reflections, and practical encouragement designed to help you pause, breathe, pray, and meet with God before the world gets loud.
+
+## Coming soon
 
 Newsletter signup form coming soon.
+
+For the proof-of-concept site, this page is a placeholder for a future email platform such as MailerLite, ConvertKit, Substack, Flodesk, or another newsletter tool.
