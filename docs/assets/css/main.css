@@ -866,3 +866,57 @@ a,
     height: 28px;
   }
 }
+/* ================================
+   Refined Coffee Bean + Footer Contrast
+   ================================ */
+
+.brand-divider-bean {
+  width: 30px;
+  height: 30px;
+}
+
+.brand-divider-bean svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.brand-divider-bean .bean-shape {
+  fill: var(--soft-mocha);
+}
+
+.brand-divider-bean .bean-crease {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 3.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Footer-only treatment so Latte & Lounge is visible on terracotta */
+.terracotta-footer .footer-kicker {
+  color: var(--cream) !important;
+  text-shadow: 0 1px 12px rgba(139, 110, 90, 0.22);
+}
+
+/* Keep footer supporting text soft but readable */
+.terracotta-footer .footer-tagline {
+  color: rgba(246, 242, 237, 0.96) !important;
+}
+
+.terracotta-footer .footer-small {
+  color: rgba(246, 242, 237, 0.88) !important;
+}
+
+/* Footer divider should feel like the reference image */
+.terracotta-footer .brand-divider-line {
+  background: rgba(200, 166, 104, 0.78);
+}
+
+.terracotta-footer .brand-divider-bean .bean-shape {
+  fill: var(--muted-gold);
+}
+
+.terracotta-footer .brand-divider-bean .bean-crease {
+  stroke: var(--cream);
+}
