@@ -650,3 +650,219 @@ strong {
     border-radius: 18px;
   }
 }
+/* ================================
+   Brand Divider
+   ================================ */
+
+.brand-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2.5rem auto;
+  width: min(520px, 90%);
+}
+
+.brand-divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(200, 166, 104, 0.9); /* muted gold */
+}
+
+.brand-divider-bean {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.brand-divider-bean svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-divider-bean ellipse {
+  fill: var(--soft-mocha);
+}
+
+.brand-divider-bean path {
+  fill: none;
+  stroke: var(--cream);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+/* ================================
+   Terracotta Footer
+   ================================ */
+
+.terracotta-footer {
+  padding: 3.5rem 0 3rem;
+  background: linear-gradient(135deg, #d36a5c, #cd6558);
+  border-top: 0;
+  color: var(--cream);
+}
+
+.terracotta-footer .footer-inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+.terracotta-footer .brand-divider {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+}
+
+.terracotta-footer .brand-divider-line {
+  background: rgba(200, 166, 104, 0.9); /* muted gold */
+}
+
+.terracotta-footer .brand-divider-bean ellipse {
+  fill: var(--muted-gold);
+}
+
+.terracotta-footer .brand-divider-bean path {
+  stroke: rgba(255, 250, 245, 0.95);
+}
+
+.footer-kicker {
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-tagline {
+  margin: 0.35rem 0 0;
+  color: rgba(246, 242, 237, 0.96);
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.terracotta-footer .footer-small {
+  margin-top: 0.5rem;
+  max-width: 620px;
+  color: rgba(246, 242, 237, 0.9);
+  font-size: 0.95rem;
+}
+
+/* ================================
+   Palette Usage Refinements
+   Strict Ratio-Safe Use
+   ================================ */
+
+/* 70% = cream + latte beige */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(231, 214, 194, 0.35), transparent 35%),
+    var(--cream);
+}
+
+/* supporting soft section tint */
+.page-hero,
+.home-hero,
+.site-header {
+  background-color: rgba(246, 242, 237, 0.94);
+}
+
+/* optional warm beige surfaces */
+.hero-photo-card,
+.listing-card,
+.page-content .container,
+.post .container,
+.podcast-episode .container,
+.prayer-resource .container {
+  background: rgba(255, 250, 245, 0.72);
+}
+
+/* 20% = soft mocha + warm taupe */
+body,
+p,
+.site-nav a,
+.quiet-link-list a,
+.footer-kicker {
+  color: var(--soft-mocha);
+}
+
+.eyebrow,
+.hero-subtitle,
+.page-subtitle,
+.footer-small,
+.quiet-link-list span,
+.hero-photo-card figcaption {
+  color: var(--warm-taupe);
+}
+
+/* 8% = terracotta */
+.button.primary {
+  background: var(--terracotta);
+}
+
+.button.primary:hover {
+  background: var(--soft-mocha);
+}
+
+a,
+.quiet-link-list a:hover,
+.listing-card h2 a:hover {
+  color: var(--terracotta);
+}
+
+/* small terracotta touch for active emphasis */
+.logo-text .amp,
+.amp {
+  color: var(--terracotta);
+}
+
+/* 2% = muted gold */
+.listing-card::before,
+.brand-divider-line {
+  background: rgba(200, 166, 104, 0.9);
+}
+
+::selection {
+  background: rgba(200, 166, 104, 0.35);
+  color: var(--soft-mocha);
+}
+
+/* Sage = optional, minimal, supporting only */
+.mood-section {
+  position: relative;
+}
+
+.mood-section::before {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 0 auto 1.75rem;
+  border-radius: 999px;
+  background: rgba(164, 181, 155, 0.85); /* sage accent */
+}
+
+/* optional subtle sage hover detail */
+.button.secondary:hover {
+  border-color: rgba(164, 181, 155, 0.95);
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .footer-tagline {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-divider {
+    gap: 0.75rem;
+  }
+
+  .brand-divider-bean {
+    width: 28px;
+    height: 28px;
+  }
+}
