@@ -18,8 +18,9 @@
   --shadow-soft: 0 18px 50px rgba(139, 110, 90, 0.12);
   --shadow-card: 0 12px 35px rgba(139, 110, 90, 0.1);
 
-  --font-display: Georgia, "Times New Roman", serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-accent: "Sacramento", cursive;
 
   --container: 1120px;
   --container-narrow: 760px;
@@ -921,4 +922,180 @@ a,
 
 .terracotta-footer .brand-divider-bean .bean-crease {
   stroke: var(--cream);
+}
+/* ================================
+   Google Font Typography System
+   Cormorant Garamond + Sacramento + Montserrat
+   ================================ */
+
+/* Body Copy / Navigation / UI */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+p,
+li,
+.post-content,
+.page-content,
+.prayer-resource,
+.podcast-episode {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Logo-style / Headline Serif */
+h1,
+h2,
+h3,
+.quiet-link-list strong,
+.listing-card h2,
+.footer-kicker {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+/* Hero typography */
+h1 {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+/* Body readability */
+body {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.page-content p,
+.post-content p,
+.quiet-intro p,
+.prayer-resource p,
+.podcast-episode p {
+  line-height: 1.85;
+}
+
+/* Navigation / Buttons / Labels */
+.site-nav a,
+.button,
+.eyebrow,
+.logo-tagline,
+.footer-tagline,
+.hero-photo-card figcaption,
+.quiet-link-list span,
+.post-meta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+/* Navigation specifically */
+.site-nav a {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+/* Eyebrow / small caps */
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* Buttons */
+.button {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Accent Script */
+.script-accent,
+.accent-script {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+/* Use script only in small accent moments */
+.script-amp {
+  font-family: var(--font-accent);
+  color: var(--terracotta);
+  font-size: 1.5em;
+  line-height: 0;
+}
+
+/* Footer Typography */
+.terracotta-footer .footer-kicker {
+  color: var(--latte-beige) !important;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.terracotta-footer .footer-tagline {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.terracotta-footer .footer-small {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Listing Cards */
+.listing-card h2 {
+  font-size: clamp(1.8rem, 4vw, 2.45rem);
+}
+
+.listing-card p {
+  font-family: var(--font-body);
+}
+
+/* Quiet link list */
+.quiet-link-list strong {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  letter-spacing: 0.01em;
+}
+
+/* Optional decorative accent for selected words */
+.decorative-word {
+  font-family: var(--font-accent);
+  color: var(--terracotta);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .site-nav a {
+    font-size: 0.72rem;
+  }
+
+  .terracotta-footer .footer-kicker {
+    font-size: 2.25rem;
+  }
+
+  .terracotta-footer .footer-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
 }
