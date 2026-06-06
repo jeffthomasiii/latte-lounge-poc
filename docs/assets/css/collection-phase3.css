@@ -1,0 +1,291 @@
+/* ================================
+   Phase 3 Collection Page Refinements
+   Blog, podcast, and prayer resource card systems
+   ================================ */
+
+.collection-page-content {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.collection-page-content .container {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.collection-intro {
+  max-width: 760px;
+  margin: 0 0 clamp(2.25rem, 5vw, 3.25rem);
+}
+
+.collection-intro p {
+  color: var(--warm-taupe);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.collection-intro p:first-child {
+  color: var(--soft-mocha);
+  font-size: 1.12rem;
+}
+
+.collection-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0 0 1.25rem;
+  color: var(--soft-mocha);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.collection-section-label::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(139, 110, 90, 0.12);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.collection-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 250, 245, 0.88);
+  border: 1px solid rgba(139, 110, 90, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(139, 110, 90, 0.07);
+  color: var(--soft-mocha);
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.collection-card:hover {
+  border-color: rgba(200, 166, 104, 0.3);
+  color: var(--soft-mocha);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 52px rgba(139, 110, 90, 0.13);
+}
+
+.collection-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.collection-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+.collection-card-kicker {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--terracotta);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.collection-card h2,
+.collection-card h3 {
+  margin: 0 0 0.7rem;
+  color: var(--soft-mocha);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.07;
+}
+
+.collection-card p {
+  flex: 1;
+  margin-bottom: 1rem;
+  color: var(--warm-taupe);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.collection-card-link {
+  color: var(--terracotta);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Podcast-specific layout */
+
+.collection-grid.podcast-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.podcast-collection-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.podcast-collection-card .collection-card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(246, 242, 237, 0.84), rgba(231, 214, 194, 0.5)),
+    url('../images/home-photo-brand-card.jpg') center / cover;
+}
+
+.podcast-collection-card .collection-card-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 242, 237, 0.58);
+}
+
+.podcast-collection-card .podcast-logo-card {
+  position: relative;
+  z-index: 1;
+  width: min(210px, 84%);
+  mix-blend-mode: multiply;
+}
+
+.collection-card-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0.25rem 0 1rem;
+  color: var(--warm-taupe);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Prayer-specific layout */
+
+.prayer-grid .collection-card {
+  position: relative;
+}
+
+.prayer-grid .collection-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 1.25rem 1.25rem auto;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(164, 181, 155, 0.35);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.prayer-card-topper {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  background:
+    radial-gradient(circle at 76% 28%, rgba(164, 181, 155, 0.18), transparent 7rem),
+    linear-gradient(135deg, rgba(231, 214, 194, 0.58), rgba(255, 250, 245, 0.9));
+  border-bottom: 1px solid rgba(139, 110, 90, 0.08);
+}
+
+.prayer-card-symbol {
+  color: var(--muted-gold);
+  font-family: var(--font-accent);
+  font-size: 3.25rem;
+  line-height: 1;
+}
+
+.collection-feature-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: center;
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 245, 0.9), rgba(231, 214, 194, 0.32)),
+    var(--cream);
+  border: 1px solid rgba(139, 110, 90, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 14px 38px rgba(139, 110, 90, 0.07);
+}
+
+.collection-feature-strip h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.collection-feature-strip p {
+  margin-bottom: 0;
+  color: var(--warm-taupe);
+}
+
+.collection-feature-note {
+  padding: 1.15rem;
+  background: rgba(231, 214, 194, 0.38);
+  border: 1px solid rgba(139, 110, 90, 0.08);
+  border-radius: 10px;
+}
+
+.collection-feature-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--soft-mocha);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.collection-feature-note span {
+  color: var(--warm-taupe);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+  .collection-grid,
+  .collection-grid.podcast-grid,
+  .collection-feature-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .podcast-collection-card {
+    grid-template-columns: 1fr;
+  }
+
+  .podcast-collection-card .collection-card-image-wrap {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 680px) {
+  .collection-page-content {
+    padding: 2.75rem 0 4rem;
+  }
+
+  .collection-card-body {
+    padding: 1.1rem;
+  }
+
+  .collection-feature-strip {
+    padding: 1.25rem;
+  }
+}
