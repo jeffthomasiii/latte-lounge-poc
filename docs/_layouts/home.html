@@ -129,42 +129,47 @@ layout: default
 
       <div>
         <p class="home-section-label">Podcast</p>
-        <div class="home-podcast-rail-card">
-          <div class="home-podcast-rail-art">
-            <img src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
+        <div class="home-podcast-stack">
+          <div class="home-podcast-rail-card">
+            <div class="home-podcast-rail-art">
+              <img src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
+            </div>
+
+            <div class="home-podcast-rail-copy">
+              <p class="eyebrow">Latest Episode</p>
+              {% if latest_episode %}
+                <h3>{{ latest_episode.title }}</h3>
+                <p>{{ latest_episode.excerpt | strip_html | truncate: 120 }}</p>
+                <div class="home-podcast-rail-actions">
+                  <a class="button primary" href="{{ latest_episode.url | relative_url }}">Listen Now</a>
+                </div>
+              {% else %}
+                <h3>Latte &amp; Lounge Podcast</h3>
+                <p>Short faith-filled conversations are coming soon.</p>
+                <div class="home-podcast-rail-actions">
+                  <a class="button primary" href="{{ '/podcast/' | relative_url }}">View Podcast</a>
+                </div>
+              {% endif %}
+            </div>
           </div>
 
-          <div class="home-podcast-rail-copy">
-            <p class="eyebrow">Latest Episode</p>
-            {% if latest_episode %}
-              <h3>{{ latest_episode.title }}</h3>
-              <p>{{ latest_episode.excerpt | strip_html | truncate: 120 }}</p>
-              <div class="home-podcast-rail-actions">
-                <a class="button primary" href="{{ latest_episode.url | relative_url }}">Listen Now</a>
-                <a class="text-link" href="{{ '/podcast/' | relative_url }}">All Episodes →</a>
+          {% for episode in podcast_episodes offset:1 limit:1 %}
+            <a class="home-podcast-mini-row" href="{{ episode.url | relative_url }}">
+              <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="{{ episode.title }} episode artwork">
+              <div class="home-podcast-mini-copy">
+                <span>EP. {{ episode.episode }}</span>
+                <strong>{{ episode.title }}</strong>
+                <p>{{ episode.excerpt | strip_html | truncate: 72 }}</p>
               </div>
-            {% else %}
-              <h3>Latte &amp; Lounge Podcast</h3>
-              <p>Short faith-filled conversations are coming soon.</p>
-              <div class="home-podcast-rail-actions">
-                <a class="button primary" href="{{ '/podcast/' | relative_url }}">View Podcast</a>
-              </div>
-            {% endif %}
+              <span class="home-podcast-mini-time">12:34</span>
+              <span class="home-podcast-mini-play" aria-hidden="true">▶</span>
+            </a>
+          {% endfor %}
+
+          <div class="home-podcast-cta-row">
+            <a class="text-link" href="{{ '/podcast/' | relative_url }}">All Episodes →</a>
           </div>
         </div>
-
-        {% for episode in podcast_episodes offset:1 limit:1 %}
-          <a class="home-podcast-mini-row" href="{{ episode.url | relative_url }}">
-            <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="{{ episode.title }} episode artwork">
-            <div class="home-podcast-mini-copy">
-              <span>EP. {{ episode.episode }}</span>
-              <strong>{{ episode.title }}</strong>
-              <p>{{ episode.excerpt | strip_html | truncate: 72 }}</p>
-            </div>
-            <span class="home-podcast-mini-time">12:34</span>
-            <span class="home-podcast-mini-play" aria-hidden="true">▶</span>
-          </a>
-        {% endfor %}
       </div>
     </aside>
   </div>
