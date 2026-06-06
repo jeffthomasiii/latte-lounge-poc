@@ -1,0 +1,369 @@
+/* ================================
+   Phase 4 Responsive Polish
+   Mobile, tablet, and small-screen refinements
+   ================================ */
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Header / navigation */
+
+@media (max-width: 1100px) {
+  .header-inner.simple-header {
+    align-items: center;
+  }
+
+  .site-header .image-logo {
+    max-width: 250px;
+  }
+
+  .site-nav {
+    gap: 0.8rem 1.15rem;
+  }
+
+  .site-nav .nav-link {
+    font-size: 0.66rem;
+    letter-spacing: 0.13em;
+  }
+
+  .site-nav .nav-link.nav-cta {
+    padding-inline: 0.9rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: relative;
+  }
+
+  .header-inner.simple-header {
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.95rem 0 0.8rem;
+  }
+
+  .site-header .image-logo {
+    max-width: 235px;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding: 0.25rem 0 0.2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav .nav-link {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.63rem;
+    letter-spacing: 0.12em;
+  }
+
+  .site-nav .nav-link::after {
+    bottom: 0.12rem;
+  }
+
+  .site-nav .nav-link.nav-cta {
+    min-height: 36px;
+    padding: 0.62rem 0.85rem;
+  }
+}
+
+/* Hero */
+
+@media (max-width: 980px) {
+  .phase-two-hero-grid {
+    gap: 1.65rem;
+  }
+
+  .phase-two-hero-copy {
+    max-width: 720px;
+  }
+
+  .phase-two-hero h1 {
+    max-width: 640px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    max-width: 460px;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 190px;
+  }
+
+  .hero-promise-row {
+    margin-top: 1.2rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-hero.phase-two-hero {
+    padding: 2.35rem 0 1.8rem;
+  }
+
+  .hero-kicker {
+    margin-bottom: 0.8rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.17em;
+  }
+
+  .phase-two-hero h1 {
+    max-width: 360px;
+    margin-bottom: 0.9rem;
+    font-size: clamp(2.45rem, 12.4vw, 3.45rem);
+    line-height: 1.02;
+  }
+
+  .hero-mini-divider {
+    width: min(210px, 75%);
+    margin: 0.9rem 0 1rem;
+  }
+
+  .phase-two-hero .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    width: 100%;
+    max-width: none;
+    gap: 0.65rem;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-promise-row {
+    gap: 0.45rem;
+  }
+
+  .hero-promise-pill {
+    min-height: 30px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .phase-two-hero-media,
+  .phase-two-hero-photo img {
+    min-height: 280px;
+  }
+}
+
+/* Homepage lower layout */
+
+@media (max-width: 1180px) and (min-width: 1061px) {
+  .home-lower-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+  }
+
+  .home-blog-grid.editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1060px) {
+  .home-lower-refinement {
+    padding-top: 1.4rem;
+  }
+
+  .home-right-rail {
+    margin-top: 1.75rem;
+  }
+
+  .home-right-rail > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-section-label,
+  .collection-section-label {
+    gap: 0.55rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+  }
+
+  .home-blog-grid.editorial-grid {
+    gap: 0.9rem;
+  }
+
+  .editorial-grid .home-blog-content {
+    padding: 0.95rem;
+  }
+
+  .editorial-grid .home-blog-card h3 {
+    font-size: 1.42rem;
+  }
+
+  .home-right-rail .home-scripture-card {
+    min-height: 235px;
+  }
+
+  .home-podcast-rail-card {
+    padding: 0.9rem;
+  }
+
+  .home-podcast-rail-copy h3 {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-podcast-mini-row {
+    gap: 0.65rem;
+    padding: 0.65rem;
+  }
+
+  .home-podcast-mini-copy strong {
+    font-size: 1rem;
+  }
+
+  .home-podcast-mini-copy p {
+    display: none;
+  }
+
+  .home-podcast-mini-play {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Collection pages */
+
+@media (max-width: 980px) {
+  .page-hero {
+    padding: 3.5rem 0 2.75rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.65rem, 10vw, 4.25rem);
+  }
+
+  .collection-feature-strip {
+    gap: 1rem;
+  }
+
+  .collection-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .collection-page-content {
+    padding-top: 2.35rem;
+  }
+
+  .collection-intro p:first-child,
+  .collection-feature-strip p {
+    font-size: 0.98rem;
+  }
+
+  .collection-card h2,
+  .collection-card h3 {
+    font-size: 1.62rem;
+  }
+
+  .collection-card p {
+    font-size: 0.84rem;
+  }
+
+  .collection-feature-note strong {
+    font-size: 1.22rem;
+  }
+}
+
+/* Content pages / articles */
+
+@media (max-width: 720px) {
+  .page-content,
+  .post,
+  .podcast-episode,
+  .prayer-resource {
+    padding: 3rem 0;
+  }
+
+  .page-content .container,
+  .post .container,
+  .podcast-episode .container,
+  .prayer-resource .container {
+    padding: 1.4rem;
+    border-radius: 16px;
+  }
+
+  .post-content blockquote,
+  .prayer-resource blockquote {
+    margin: 2rem 0;
+    padding: 1.6rem 1.2rem;
+  }
+
+  .post-content blockquote p,
+  .prayer-resource blockquote p {
+    font-size: 1.55rem;
+  }
+}
+
+/* Footer */
+
+@media (max-width: 980px) {
+  .footer-luxury-grid {
+    gap: 2rem;
+  }
+
+  .footer-brand-block {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-luxury-grid {
+    gap: 1.6rem;
+  }
+
+  .footer-description,
+  .footer-signup-card p,
+  .footer-link-list a {
+    font-size: 0.86rem;
+  }
+
+  .footer-column-title,
+  .footer-signup-title {
+    margin-bottom: 0.75rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-signup-card {
+    padding: 1.15rem;
+  }
+
+  .footer-strip-inner {
+    gap: 0.45rem;
+    padding: 0.7rem 0;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-strip-brand {
+    font-size: 1.15rem;
+  }
+}
