@@ -6,7 +6,16 @@
 
     <nav class="site-nav" aria-label="Main navigation">
       {% for item in site.data.navigation.main %}
-        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% assign active_class = '' %}
+        {% if page.url == item.url %}
+          {% assign active_class = ' is-active' %}
+        {% elsif item.url != '/' and page.url contains item.url %}
+          {% assign active_class = ' is-active' %}
+        {% endif %}
+
+        <a class="nav-link{% if item.style == 'cta' %} nav-cta{% endif %}{{ active_class }}" href="{{ item.url | relative_url }}">
+          {{ item.title }}
+        </a>
       {% endfor %}
     </nav>
   </div>
