@@ -42,133 +42,117 @@ layout: default
   </div>
 </section>
 
-<section class="home-welcome">
-  <div class="container home-welcome-card">
-    <div>
-      <p class="eyebrow">Begin Here</p>
-      <h2>A quieter way to begin.</h2>
-    </div>
-    <div class="home-welcome-content">
-      {{ content }}
-    </div>
-  </div>
-</section>
+{% assign podcast_episodes = site.podcast | sort: "episode" | reverse %}
+{% assign latest_episode = podcast_episodes | first %}
 
-<section class="homepage-section soft-section">
-  <div class="container">
-    <div class="section-heading-row">
-      <div class="section-heading-copy">
-        <p class="eyebrow">Before the World Wakes</p>
-        <h2>Morning reflections for real life.</h2>
-        <p>Faith-filled encouragement for the woman who wants to meet with God before the inbox, meetings, and responsibilities begin.</p>
-      </div>
-      <a class="text-link" href="{{ '/blog/' | relative_url }}">View the Blog →</a>
-    </div>
+<section class="home-lower-refinement">
+  <div class="container home-lower-grid">
+    <div class="home-lower-main">
+      <p class="home-section-label">Morning Reflections</p>
 
-    <div class="home-blog-grid">
-      {% for post in site.posts limit:3 %}
-        <a class="home-blog-card" href="{{ post.url | relative_url }}">
-          {% if forloop.index == 1 %}
-            <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
-          {% elsif forloop.index == 2 %}
-            <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
-          {% else %}
-            <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
-          {% endif %}
+      <div class="home-blog-grid editorial-grid">
+        {% for post in site.posts limit:6 %}
+          <a class="home-blog-card" href="{{ post.url | relative_url }}">
+            {% assign image_index = forloop.index | modulo: 3 %}
+            {% if image_index == 1 %}
+              <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
+            {% elsif image_index == 2 %}
+              <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
+            {% else %}
+              <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
+            {% endif %}
 
+            <div class="home-blog-content">
+              <span class="home-blog-category">{{ post.category | default: "Morning Reflection" }}</span>
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.excerpt | strip_html | truncate: 95 }}</p>
+              <span class="home-blog-read-more">Read More →</span>
+            </div>
+          </a>
+        {% endfor %}
+
+        <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
+          <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
           <div class="home-blog-content">
-            <span class="home-blog-category">{{ post.category | default: "Morning Reflection" }}</span>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.excerpt | strip_html | truncate: 118 }}</p>
+            <span class="home-blog-category">Before the World Wakes</span>
+            <h3>Starting With Surrender</h3>
+            <p>Why the first moment with God changes everything that follows.</p>
             <span class="home-blog-read-more">Read More →</span>
           </div>
         </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
-<section class="home-scripture-section">
-  <div class="container">
-    <div class="home-scripture-card">
-      <p class="home-scripture-quote">Be still, and know that I am God.</p>
-      <p class="home-scripture-reference">Psalm 46:10</p>
-      <div class="scripture-card-divider" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-
-<section class="homepage-section">
-  <div class="container">
-    <div class="section-heading-row">
-      <div class="section-heading-copy">
-        <p class="eyebrow">Podcast</p>
-        <h2>Faith before everyone needs something.</h2>
-        <p>Short episodes designed to help you pause, breathe, pray, and begin the day from a place of peace.</p>
-      </div>
-    </div>
-
-    {% assign podcast_episodes = site.podcast | sort: "episode" | reverse %}
-    {% assign latest_episode = podcast_episodes | first %}
-
-    <div class="home-podcast-feature">
-      <div class="podcast-art-card">
-        <img src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
-      </div>
-
-      <div class="podcast-feature-copy">
-        <p class="eyebrow">Latest Episode</p>
-        {% if latest_episode %}
-          <h2>{{ latest_episode.title }}</h2>
-          <p>{{ latest_episode.excerpt | strip_html | truncate: 170 }}</p>
-          <div class="podcast-meta-row">
-            <span>Episode {{ latest_episode.episode }}</span>
-            <span>5–15 minutes</span>
+        <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
+          <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
+          <div class="home-blog-content">
+            <span class="home-blog-category">Faith in the Boardroom</span>
+            <h3>Excellence Without Exhaustion</h3>
+            <p>Leading with faith, wisdom, and boundaries in every season.</p>
+            <span class="home-blog-read-more">Read More →</span>
           </div>
-          <div class="podcast-actions">
-            <a class="button primary" href="{{ latest_episode.url | relative_url }}">Listen Now</a>
-            <a class="button secondary" href="{{ '/podcast/' | relative_url }}">View All Episodes</a>
+        </a>
+
+        <a class="home-blog-card" href="{{ '/prayer-resources/' | relative_url }}">
+          <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
+          <div class="home-blog-content">
+            <span class="home-blog-category">Sacred Pause</span>
+            <h3>A Prayer for Overwhelmed Hearts</h3>
+            <p>A simple prayer to reset when life feels like too much.</p>
+            <span class="home-blog-read-more">Read More →</span>
           </div>
-        {% else %}
-          <h2>Latte &amp; Lounge Podcast</h2>
-          <p>Short faith-filled conversations are coming soon.</p>
-          <div class="podcast-actions">
-            <a class="button primary" href="{{ '/podcast/' | relative_url }}">View the Podcast</a>
+        </a>
+
+        <a class="home-blog-card" href="{{ '/podcast/' | relative_url }}">
+          <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
+          <div class="home-blog-content">
+            <span class="home-blog-category">Anchored Living</span>
+            <h3>Peace Before Pressure</h3>
+            <p>Finding calm before the chaos begins and responsibility calls.</p>
+            <span class="home-blog-read-more">Read More →</span>
           </div>
-        {% endif %}
+        </a>
+      </div>
+
+      <div class="home-blog-cta-row">
+        <a class="text-link" href="{{ '/blog/' | relative_url }}">View the Blog →</a>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="homepage-section soft-section">
-  <div class="container">
-    <div class="section-heading-row">
-      <div class="section-heading-copy">
-        <p class="eyebrow">Start Here</p>
-        <h2>Choose your sacred pause.</h2>
-        <p>Read, listen, or pray — begin with the rhythm your morning needs most.</p>
+    <aside class="home-right-rail" aria-label="Scripture and podcast highlights">
+      <div>
+        <p class="home-section-label">Scripture</p>
+        <div class="home-scripture-card">
+          <p class="home-scripture-quote">Be still, and know that I am God.</p>
+          <p class="home-scripture-reference">Psalm 46:10</p>
+          <div class="scripture-card-divider" aria-hidden="true"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="home-path-grid">
-      <a class="home-path-card" href="{{ '/blog/' | relative_url }}">
-        <span class="home-path-number">01</span>
-        <h3>Read</h3>
-        <p>Morning reflections and devotionals for life, leadership, and faith.</p>
-      </a>
+      <div>
+        <p class="home-section-label">Podcast</p>
+        <div class="home-podcast-rail-card">
+          <div class="home-podcast-rail-art">
+            <img src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
+          </div>
 
-      <a class="home-path-card" href="{{ '/podcast/' | relative_url }}">
-        <span class="home-path-number">02</span>
-        <h3>Listen</h3>
-        <p>Short conversations to help you meet with God before the day begins.</p>
-      </a>
-
-      <a class="home-path-card" href="{{ '/prayer-resources/' | relative_url }}">
-        <span class="home-path-number">03</span>
-        <h3>Pray</h3>
-        <p>Simple prayers for anxious mornings, hard conversations, and quiet resets.</p>
-      </a>
-    </div>
+          <div class="home-podcast-rail-copy">
+            <p class="eyebrow">Latest Episode</p>
+            {% if latest_episode %}
+              <h3>{{ latest_episode.title }}</h3>
+              <p>{{ latest_episode.excerpt | strip_html | truncate: 120 }}</p>
+              <div class="home-podcast-rail-actions">
+                <a class="button primary" href="{{ latest_episode.url | relative_url }}">Listen Now</a>
+                <a class="text-link" href="{{ '/podcast/' | relative_url }}">All Episodes →</a>
+              </div>
+            {% else %}
+              <h3>Latte &amp; Lounge Podcast</h3>
+              <p>Short faith-filled conversations are coming soon.</p>
+              <div class="home-podcast-rail-actions">
+                <a class="button primary" href="{{ '/podcast/' | relative_url }}">View Podcast</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
