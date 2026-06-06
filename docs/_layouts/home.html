@@ -152,6 +152,19 @@ layout: default
             {% endif %}
           </div>
         </div>
+
+        {% for episode in podcast_episodes offset:1 limit:1 %}
+          <a class="home-podcast-mini-row" href="{{ episode.url | relative_url }}">
+            <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="{{ episode.title }} episode artwork">
+            <div class="home-podcast-mini-copy">
+              <span>EP. {{ episode.episode }}</span>
+              <strong>{{ episode.title }}</strong>
+              <p>{{ episode.excerpt | strip_html | truncate: 72 }}</p>
+            </div>
+            <span class="home-podcast-mini-time">12:34</span>
+            <span class="home-podcast-mini-play" aria-hidden="true">▶</span>
+          </a>
+        {% endfor %}
       </div>
     </aside>
   </div>
