@@ -191,6 +191,91 @@
   letter-spacing: 0.13em;
 }
 
+.home-podcast-mini-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto 34px;
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 250, 245, 0.78);
+  border: 1px solid rgba(139, 110, 90, 0.09);
+  border-radius: 8px;
+  color: var(--soft-mocha);
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(139, 110, 90, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.home-podcast-mini-row:hover {
+  color: var(--soft-mocha);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(139, 110, 90, 0.1);
+}
+
+.home-podcast-mini-row img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.home-podcast-mini-copy {
+  min-width: 0;
+}
+
+.home-podcast-mini-copy span {
+  display: block;
+  margin-bottom: 0.18rem;
+  color: var(--terracotta);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-podcast-mini-copy strong {
+  display: block;
+  overflow: hidden;
+  color: var(--soft-mocha);
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-podcast-mini-copy p {
+  overflow: hidden;
+  margin: 0.18rem 0 0;
+  color: var(--warm-taupe);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-podcast-mini-time {
+  color: var(--warm-taupe);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.home-podcast-mini-play {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--soft-mocha);
+  border-radius: 999px;
+  color: var(--cream);
+  font-size: 0.62rem;
+  line-height: 1;
+}
+
 .home-blog-cta-row {
   display: flex;
   justify-content: flex-end;
@@ -218,6 +303,19 @@
 
   .home-podcast-rail-art {
     min-height: 220px;
+  }
+
+  .home-podcast-mini-row {
+    grid-template-columns: 48px minmax(0, 1fr) 32px;
+  }
+
+  .home-podcast-mini-row img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-podcast-mini-time {
+    display: none;
   }
 
   .home-blog-cta-row {
