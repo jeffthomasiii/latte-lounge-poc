@@ -1,13 +1,46 @@
-<footer class="site-footer terracotta-footer">
-  <div class="container footer-inner">
-    {% include brand-divider.html %}
+<footer class="site-footer luxury-footer">
+  <div class="container footer-luxury-grid">
+    <div class="footer-brand-block">
+      <a class="footer-logo" href="{{ '/' | relative_url }}" aria-label="Latte & Lounge home">
+        <img src="{{ '/assets/images/logo-latte-lounge-wordmark.png' | relative_url }}" alt="Latte & Lounge">
+      </a>
+      <p class="footer-description">
+        A faith-based lifestyle space for professional women who want to begin their day anchored in God.
+      </p>
+      <p class="footer-small">A sacred pause before the world gets loud.</p>
+    </div>
 
-    <p class="footer-kicker">
-      Latte <span class="script-amp">&amp;</span> Lounge
-    </p>
-    <p class="footer-tagline">A sacred pause before the world gets loud.</p>
-    <p class="footer-small">
-      Devotionals, prayer, and honest conversations for professional women.
-    </p>
+    <div class="footer-column">
+      <p class="footer-column-title">Explore</p>
+      <div class="footer-link-list">
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/podcast/' | relative_url }}">Podcast</a>
+        <a href="{{ '/prayer-resources/' | relative_url }}">Resources</a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-column-title">Community</p>
+      <div class="footer-link-list">
+        <a href="{{ '/subscribe/' | relative_url }}">Join the Community</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/blog/' | relative_url }}">Morning Reflections</a>
+        <a href="{{ '/prayer-resources/' | relative_url }}">Prayer Library</a>
+      </div>
+    </div>
+
+    <div class="footer-signup-card">
+      <p class="footer-signup-title">Stay Encouraged</p>
+      <p>Get devotionals, prayers, and encouragement delivered to your inbox.</p>
+      <a class="button primary footer-button" href="{{ '/subscribe/' | relative_url }}">Subscribe</a>
+    </div>
+  </div>
+
+  <div class="footer-terracotta-strip">
+    <div class="container footer-strip-inner">
+      <span class="footer-strip-brand">Latte <span class="script-amp">&amp;</span> Lounge</span>
+      <span>Anchored instead of anxious.</span>
+    </div>
   </div>
 </footer>
