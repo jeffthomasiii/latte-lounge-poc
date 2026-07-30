@@ -3,7 +3,13 @@ layout: default
 ---
 
 {% assign podcast_episodes = site.podcast | sort: "episode" | reverse %}
-{% assign latest_episode = podcast_episodes | first %}
+{% assign latest_episode = nil %}
+{% for episode in podcast_episodes %}
+  {% if episode.audio_url %}
+    {% assign latest_episode = episode %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 {% assign latest_post = site.posts | first %}
 
 <div class="ll-home">
@@ -17,7 +23,7 @@ layout: default
           Before you open your inbox, make the decisions, begin the conversations, or respond to everyone who needs you, take a moment to meet honestly with God. Bring Him what is already on your mind, ask for wisdom, and begin from a steadier place.
         </p>
         <div class="ll-hero-actions">
-          <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Start Your Morning</a>
+          <a class="button primary" href="{{ '/prayer-resources/' | relative_url }}">Start Your Morning</a>
           <a class="button secondary" href="{{ '/about/' | relative_url }}">Meet Samatra</a>
         </div>
         <p class="ll-hero-note">Coffee, conversation, and faith for real life</p>
@@ -62,31 +68,39 @@ layout: default
 
       <div class="ll-pillar-grid">
         <a class="ll-pillar-card" href="{{ '/prayer-resources/' | relative_url }}">
-          <span class="ll-pillar-icon">☕</span>
+          <span class="ll-pillar-icon" aria-hidden="true">
+            <img src="{{ '/assets/images/favicon.svg' | relative_url }}" alt="">
+          </span>
           <h3>Set Your Day</h3>
           <p>Begin with God through prayer, Scripture, and reflection before the calendar fills up.</p>
           <span class="ll-card-link">Explore</span>
         </a>
 
         <a class="ll-pillar-card" href="{{ '/blog/' | relative_url }}">
-          <span class="ll-pillar-icon">“ ”</span>
+          <span class="ll-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M5 5.5h14v9H9l-4 4v-13Z"/><path d="M8 9h8M8 12h5"/></svg>
+          </span>
           <h3>Raw &amp; Real Conversations</h3>
           <p>Talk openly about faith, emotional weight, identity, transitions, and the things women often carry quietly.</p>
           <span class="ll-card-link">Read</span>
         </a>
 
         <a class="ll-pillar-card" href="{{ '/blog/' | relative_url }}">
-          <span class="ll-pillar-icon">▣</span>
+          <span class="ll-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M4 8h16v11H4z"/><path d="M9 8V5h6v3M4 12h16M10 12v2h4v-2"/></svg>
+          </span>
           <h3>Faith at Work</h3>
           <p>Apply a biblical worldview to integrity, workplace relationships, difficult decisions, boundaries, and responsibility.</p>
           <span class="ll-card-link">Read</span>
         </a>
 
-        <a class="ll-pillar-card" href="{{ '/podcast/' | relative_url }}">
-          <span class="ll-pillar-icon">◇</span>
+        <a class="ll-pillar-card" href="{{ '/blog/' | relative_url }}">
+          <span class="ll-pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><path d="m14.8 9.2-1.9 3.7-3.7 1.9 1.9-3.7 3.7-1.9Z"/></svg>
+          </span>
           <h3>Women Who Lead</h3>
           <p>Practical wisdom for growing responsibility, difficult decisions, and leadership situations no one prepared you for.</p>
-          <span class="ll-card-link">Listen</span>
+          <span class="ll-card-link">Read</span>
         </a>
       </div>
     </div>
@@ -117,7 +131,7 @@ layout: default
     <div class="container">
       <div class="ll-scripture-card">
         <blockquote>Be still, and know that I am God.</blockquote>
-        <cite>Psalm 46:10</cite>
+        <cite>Psalm 46:10 KJV</cite>
       </div>
     </div>
   </section>
@@ -126,7 +140,7 @@ layout: default
     <div class="container ll-feature-grid">
       <article class="ll-feature-card">
         <div class="ll-feature-copy">
-          <p class="ll-section-label">Listen on the podcast</p>
+          <p class="ll-section-label">Podcast preview</p>
           {% if latest_episode %}
             <h2>{{ latest_episode.title }}</h2>
             <p>{{ latest_episode.excerpt | strip_html | truncate: 155 }}</p>
@@ -134,10 +148,10 @@ layout: default
           {% else %}
             <h2>Latte &amp; Lounge Podcast</h2>
             <p>Short reflections, prayers, and practical conversations about faith, work, leadership, and everyday life are coming soon.</p>
-            <a class="text-link" href="{{ '/podcast/' | relative_url }}">Explore the Podcast →</a>
+            <a class="text-link" href="{{ '/podcast/' | relative_url }}">Preview the Podcast →</a>
           {% endif %}
         </div>
-        <img src="{{ '/assets/images/latte-lounge-podcast-feature.webp' | relative_url }}" alt="Latte and Lounge podcast displayed beside coffee and earbuds">
+        <img src="{{ '/assets/images/latte-lounge-podcast-feature.webp' | relative_url }}" alt="Latte and Lounge podcast artwork beside coffee and earbuds">
       </article>
 
       <article class="ll-feature-card">
@@ -163,12 +177,12 @@ layout: default
       <div class="ll-connect-card ll-connect-card-production">
         <img src="{{ '/assets/images/latte-lounge-signup-banner.webp' | relative_url }}" alt="Latte and soft neutral textures arranged for a quiet morning">
         <div class="ll-connect-copy">
-          <p class="ll-section-label">Stay connected</p>
-          <h2>Let’s meet here again.</h2>
-          <p>Receive new reflections, prayers, podcast conversations, and practical encouragement for faith, work, leadership, and everyday life.</p>
+          <p class="ll-section-label">Begin where you are</p>
+          <h2>Bring God what you are carrying today.</h2>
+          <p>Use a short prayer to name what is true, place the day before God, and ask for the wisdom and steadiness you need.</p>
         </div>
         <div class="ll-connect-actions">
-          <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+          <a class="button primary" href="{{ '/prayer-resources/' | relative_url }}">Explore Prayer Resources</a>
         </div>
       </div>
     </div>
