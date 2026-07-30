@@ -2,7 +2,7 @@
 layout: page
 title: Prayer Resources
 eyebrow: "Pray"
-subtitle: "Short prayers for real mornings, real pressure, and real peace."
+subtitle: "Honest prayers for full mornings, heavy hearts, real pressure, and the day ahead."
 content_width: wide
 collection_style: true
 ---
@@ -10,13 +10,13 @@ collection_style: true
 <div class="collection-feature-strip">
   <div>
     <p class="eyebrow">Prayer Library</p>
-    <h2>A sacred pause for full mornings.</h2>
-    <p>Browse short resources for quiet moments, busy mornings, and the spaces before the day begins.</p>
+    <h2>Bring God what you are carrying.</h2>
+    <p>You do not need perfect words, the right Scripture already in mind, or a quiet uninterrupted hour. These short prayer resources are here to help you talk honestly with God in calm mornings, busy mornings, and moments when you simply know you need His help.</p>
   </div>
 
   <div class="collection-feature-note">
-    <strong>Start here.</strong>
-    <span>Choose one short resource and take a quiet moment before moving forward.</span>
+    <strong>Start with what is true.</strong>
+    <span>Tell God how you feel, place the day before Him, and trust Him for wisdom, peace, and steadiness.</span>
   </div>
 </div>
 
