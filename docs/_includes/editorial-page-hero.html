@@ -1,0 +1,17 @@
+<section class="editorial-page-hero{% if include.compact %} editorial-page-hero--compact{% endif %}">
+  <div class="container editorial-page-hero__grid">
+    <div class="editorial-page-hero__copy">
+      {% if include.eyebrow %}<p class="ll-section-label">{{ include.eyebrow }}</p>{% endif %}
+      <h1>{{ include.title }}</h1>
+      {% if include.subtitle %}<p class="editorial-page-hero__subtitle">{{ include.subtitle }}</p>{% endif %}
+      {% if include.actions %}{{ include.actions }}{% endif %}
+    </div>
+
+    {% if include.image %}
+      <figure class="editorial-page-hero__media">
+        <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt | default: include.title }}">
+        {% if include.badge %}<figcaption>{{ include.badge }}</figcaption>{% endif %}
+      </figure>
+    {% endif %}
+  </div>
+</section>
