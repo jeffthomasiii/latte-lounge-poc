@@ -5,7 +5,7 @@ eyebrow: "The Latte & Lounge Journal"
 subtitle: "Scripture, honest conversation, and practical wisdom for faith, work, leadership, and everyday life."
 hero_image: "/assets/images/latte-lounge-reflection-feature.webp"
 hero_image_alt: "Open morning reflection journal with a latte and gold pen"
-hero_badge: "Faith that speaks to what you carry"
+hero_badge: "Faith that meets you in what you carry"
 page_class: "blog-editorial-page"
 content_width: wide
 ---
@@ -18,7 +18,7 @@ content_width: wide
     <img src="{{ '/assets/images/latte-lounge-reflection-feature.webp' | relative_url }}" alt="Morning journal and latte in warm sunlight">
   </div>
   <div class="blog-featured-story__copy">
-    <p class="ll-section-label">Featured reflection</p>
+    <p class="ll-section-label">Featured Reflection</p>
     <p class="editorial-content-card__kicker">{{ featured_post.category | default: "Set Your Day" }}</p>
     <h2>{{ featured_post.title }}</h2>
     <p>{{ featured_post.excerpt | strip_html | truncate: 220 }}</p>
@@ -30,10 +30,10 @@ content_width: wide
 <section class="blog-intro-band">
   <div>
     <p class="ll-section-label">Come as you are</p>
-    <h2>Faith that speaks to what you actually carry.</h2>
+    <h2>Faith for the life you are actually living.</h2>
   </div>
   <div>
-    <p>These reflections are for the woman whose mind wakes up with a list: work to do, people to care for, decisions to make, and responsibilities to carry.</p>
+    <p>These reflections are for the woman whose mind wakes up with a list: work to do, people to care for, decisions to make, and responsibilities that cannot be ignored.</p>
     <p>You do not need a perfect morning or polished words. Start with one honest conversation with God.</p>
   </div>
 </section>
@@ -41,10 +41,10 @@ content_width: wide
 <section class="blog-library-section">
   <div class="editorial-section-heading editorial-section-heading--row">
     <div>
-      <p class="ll-section-label">Recent conversations</p>
-      <h2>Read what meets you where you are.</h2>
+      <p class="ll-section-label">Latest Reflections</p>
+      <h2>Reflections for the mornings and moments you are living through.</h2>
     </div>
-    <p>Explore Scripture-rooted reflections for mornings, emotional weight, work, leadership, relationships, and everyday decisions.</p>
+    <p>Explore Scripture-rooted reflections for emotional weight, work, leadership, relationships, decisions, and everyday life.</p>
   </div>
 
   <div class="editorial-card-grid">
@@ -69,7 +69,7 @@ content_width: wide
           kicker=post.category
           title=post.title
           excerpt=post.excerpt
-          action="Read More"
+          action="Read the Reflection"
         %}
       {% endunless %}
     {% endfor %}
@@ -80,7 +80,7 @@ content_width: wide
   <div>
     <p class="ll-section-label">A sacred pause in your inbox</p>
     <h2>Stay connected to the conversation.</h2>
-    <p>Receive new reflections, prayer, podcast episodes, and practical encouragement for the day ahead.</p>
+    <p>Receive new reflections, prayers, podcast episodes, and practical encouragement for real life.</p>
   </div>
   <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
 </section>
