@@ -4,7 +4,7 @@
       <img src="{{ '/assets/images/logo-latte-lounge-wordmark.png' | relative_url }}" alt="Latte & Lounge">
     </a>
 
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav site-nav-desktop" aria-label="Main navigation">
       {% for item in site.data.navigation.main %}
         {% assign active_class = '' %}
         {% if page.url == item.url %}
@@ -18,5 +18,27 @@
         </a>
       {% endfor %}
     </nav>
+
+    <details class="mobile-nav">
+      <summary class="mobile-nav-toggle" aria-label="Open navigation menu">
+        <span class="mobile-nav-icon" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </summary>
+
+      <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+        {% for item in site.data.navigation.main %}
+          {% assign active_class = '' %}
+          {% if page.url == item.url %}
+            {% assign active_class = ' is-active' %}
+          {% elsif item.url != '/' and page.url contains item.url %}
+            {% assign active_class = ' is-active' %}
+          {% endif %}
+
+          <a class="mobile-nav-link{% if item.style == 'cta' %} mobile-nav-cta{% endif %}{{ active_class }}" href="{{ item.url | relative_url }}">
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+    </details>
   </div>
 </header>
