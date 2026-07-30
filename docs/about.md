@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Samatra
+description: "Meet Samatra and learn how Latte & Lounge grew from honest morning conversations with God during a demanding leadership transition."
 eyebrow: "The Story Behind Latte & Lounge"
 subtitle: "Set your day with God before your day begins setting you."
 hero_image: "/assets/images/latte-lounge-founder-samatra.webp"
@@ -81,6 +82,6 @@ content_width: wide
     <p>Latte &amp; Lounge is beginning with written reflections, prayer resources, podcast conversations, and stories from professional women. The long-term vision is to create a place where women can find mentorship, leadership development, coaching, and a community committed to helping them grow.</p>
     <p>I care deeply about women entering new levels of leadership without the preparation, wisdom, or support they deserve—especially women of color who may be stepping into leadership without the preparation, mentorship, or support others have received.</p>
     <p>Meaningful success is helping a woman recognize her potential and one day say, “Someone at Latte &amp; Lounge believed in me, shared what she had learned, and helped me move toward who God was calling me to be.”</p>
-    <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+    <a class="button primary" href="{{ '/prayer-resources/' | relative_url }}">Start Your Morning</a>
   </div>
 </section>

@@ -3,21 +3,25 @@ layout: default
 ---
 
 {% assign post_image = page.image | default: '/assets/images/latte-lounge-reflection-feature.webp' %}
+{% assign post_image_alt = page.image_alt | default: page.title %}
 
 <article class="editorial-post">
   <header class="editorial-post-hero">
     <div class="container editorial-post-hero__grid">
       <div class="editorial-post-hero__copy">
-        <p class="ll-section-label">{{ page.category | default: "Latte & Lounge Reflection" }}</p>
+        <p class="ll-section-label">{{ page.pillar | default: page.category | default: "Latte & Lounge Reflection" }}</p>
         <h1>{{ page.title }}</h1>
         {% if page.excerpt %}<p class="editorial-post-deck">{{ page.excerpt | strip_html }}</p>{% endif %}
         <div class="editorial-post-meta">
           {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
           <span>Latte &amp; Lounge</span>
+          {% if page.scripture %}
+            <span>{{ page.scripture }}{% if page.scripture_translation %} · {{ page.scripture_translation }}{% endif %}</span>
+          {% endif %}
         </div>
       </div>
       <figure class="editorial-post-hero__media">
-        <img src="{{ post_image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+        <img src="{{ post_image | relative_url }}" alt="{{ post_image_alt }}">
       </figure>
     </div>
   </header>
@@ -37,11 +41,11 @@ layout: default
   <footer class="editorial-post-footer">
     <div class="container editorial-newsletter-panel">
       <div>
-        <p class="ll-section-label">Let’s meet here again</p>
-        <h2>A sacred pause before the world gets loud.</h2>
-        <p>Receive new reflections, prayers, and practical encouragement for real life.</p>
+        <p class="ll-section-label">Carry this into prayer</p>
+        <h2>Bring God what is true right now.</h2>
+        <p>Choose a short prayer for the pressure, decisions, or emotional weight you are carrying today.</p>
       </div>
-      <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+      <a class="button primary" href="{{ '/prayer-resources/' | relative_url }}">Explore Prayer Resources</a>
     </div>
   </footer>
 </article>

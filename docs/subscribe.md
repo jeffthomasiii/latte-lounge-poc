@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Subscribe
+description: "The Latte & Lounge email community is in development and will eventually share reflections, prayers, podcast conversations, and practical encouragement."
 eyebrow: "Set Your Day"
 subtitle: "Receive Scripture, prayer, honest conversation, and practical wisdom for real life."
 ---

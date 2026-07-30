@@ -1,6 +1,12 @@
 ---
 title: "Meeting God Before Checking Your Phone"
+excerpt: "Before the phone, inbox, and other people’s needs begin shaping your morning, make room for one honest conversation with God."
 category: "Set Your Day"
+pillar: "Set Your Day"
+image: "/assets/images/latte-lounge-hero.webp"
+image_alt: "Latte and linen journals arranged in soft morning light"
+scripture: "Mark 1:35"
+scripture_translation: "CSB"
 ---
 
 It is easy to wake up and reach for your phone before you have decided what will shape your morning.
@@ -14,7 +20,7 @@ What if it was God?
 ## Scripture Anchor
 
 “Very early in the morning, while it was still dark, he got up, went out, and made his way to a deserted place; and there he was praying.”  
-Mark 1:35
+Mark 1:35 (CSB)
 
 ## Reflection
 

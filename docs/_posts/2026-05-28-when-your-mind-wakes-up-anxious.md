@@ -1,6 +1,12 @@
 ---
 title: "When Your Mind Wakes Up Anxious"
+excerpt: "Before you start solving the day, tell God the truth about what you are carrying and ask Him for wisdom and steadiness."
 category: "Set Your Day"
+pillar: "Set Your Day"
+image: "/assets/images/latte-lounge-reflection-feature.webp"
+image_alt: "Open reflection journal beside a latte in warm morning light"
+scripture: "1 Peter 5:7"
+scripture_translation: "NIV"
 ---
 
 Some mornings, your body is still in bed but your mind is already in the meeting.
@@ -14,7 +20,7 @@ This is the sacred pause—not because everything is calm, but because your soul
 ## Scripture Anchor
 
 “Cast all your anxiety on him because he cares for you.”  
-1 Peter 5:7
+1 Peter 5:7 (NIV)
 
 ## Reflection
 

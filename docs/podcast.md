@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Podcast
+description: "Preview the upcoming Latte & Lounge podcast: short reflections, honest prayers, and practical conversations for faith, work, leadership, and everyday life."
 eyebrow: "Listen"
 subtitle: "Where women meet God before the world gets loud."
 content_width: wide
@@ -20,27 +21,43 @@ collection_style: true
   </div>
 </div>
 
-<p class="collection-section-label">Recent Episodes</p>
-
 {% assign podcast_episodes = site.podcast | sort: "episode" | reverse %}
+{% assign has_published_audio = false %}
+{% for episode in podcast_episodes %}
+  {% if episode.audio_url %}
+    {% assign has_published_audio = true %}
+  {% endif %}
+{% endfor %}
 
-<div class="collection-grid podcast-grid">
-  {% for episode in podcast_episodes %}
-    <a class="collection-card podcast-collection-card" href="{{ episode.url | relative_url }}">
-      <div class="collection-card-image-wrap">
-        <img class="podcast-logo-card" src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
-      </div>
+{% if has_published_audio %}
+  <p class="collection-section-label">Recent Episodes</p>
+  <div class="collection-grid podcast-grid">
+    {% for episode in podcast_episodes %}
+      {% if episode.audio_url %}
+        <a class="collection-card podcast-collection-card" href="{{ episode.url | relative_url }}">
+          <div class="collection-card-image-wrap">
+            <img class="podcast-logo-card" src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
+          </div>
 
-      <div class="collection-card-body">
-        <span class="collection-card-kicker">Podcast Episode</span>
-        <h2>{{ episode.title }}</h2>
-        <div class="collection-card-meta-row">
-          <span>Episode {{ episode.episode }}</span>
-          {% if episode.duration %}<span>{{ episode.duration }}</span>{% endif %}
-        </div>
-        <p>{{ episode.excerpt | strip_html | truncate: 150 }}</p>
-        <span class="collection-card-link">Listen to the Episode →</span>
-      </div>
-    </a>
-  {% endfor %}
-</div>
+          <div class="collection-card-body">
+            <span class="collection-card-kicker">Podcast Episode</span>
+            <h2>{{ episode.title }}</h2>
+            <div class="collection-card-meta-row">
+              <span>Episode {{ episode.episode }}</span>
+              {% if episode.duration %}<span>{{ episode.duration }}</span>{% endif %}
+            </div>
+            <p>{{ episode.excerpt | strip_html | truncate: 150 }}</p>
+            <span class="collection-card-link">Listen to the Episode →</span>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <section class="collection-status-panel" aria-labelledby="podcast-status-title">
+    <p class="collection-section-label">In Development</p>
+    <h2 id="podcast-status-title">The first episodes are being prepared.</h2>
+    <p>Episode previews and written prayers are available behind the scenes, but audio episodes will appear here only after they are ready to listen to.</p>
+    <a class="button secondary" href="{{ '/blog/' | relative_url }}">Read the Reflections</a>
+  </section>
+{% endif %}

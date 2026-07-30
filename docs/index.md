@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+description: "Latte & Lounge helps professional women meet honestly with God before the work, decisions, responsibilities, and people ahead begin directing the day."
 ---
 
 Latte & Lounge was created for professional women who love God and carry a lot.

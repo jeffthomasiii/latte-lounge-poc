@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Contact
+description: "Learn what future Latte & Lounge contact options will support, including prayer requests, stories, podcast ideas, interviews, and collaboration inquiries."
 eyebrow: "Connect"
 subtitle: "Share a question, a story, a prayer request, or an idea for a future conversation."
 ---

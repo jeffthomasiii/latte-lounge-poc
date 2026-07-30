@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
+    {% assign meta_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines %}
+    <meta name="description" content="{{ meta_description | escape }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F6F2ED">
 
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/visual-refresh.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/production-assets-mobile-nav.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/editorial-components.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/alignment-fixes.css' | relative_url }}">
   </head>
 
   <body>

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Prayer Resources
+description: "Honest, accessible prayers for full mornings, heavy hearts, real pressure, difficult decisions, and the day ahead."
 eyebrow: "Pray"
 subtitle: "Honest prayers for full mornings, heavy hearts, real pressure, and the day ahead."
 content_width: wide

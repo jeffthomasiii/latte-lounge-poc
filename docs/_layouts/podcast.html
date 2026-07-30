@@ -4,11 +4,25 @@ layout: default
 
 <article class="podcast-episode">
   <div class="container narrow">
-    <p class="eyebrow">Podcast Episode</p>
+    <p class="eyebrow">{% if page.audio_url %}Podcast Episode{% else %}Episode Preview{% endif %}</p>
     <h1>{{ page.title }}</h1>
 
     {% if page.episode %}
-      <p class="post-meta">Episode {{ page.episode }}</p>
+      <p class="post-meta">Episode {{ page.episode }}{% if page.duration %} · {{ page.duration }}{% endif %}</p>
+    {% endif %}
+
+    {% if page.audio_url %}
+      <div class="podcast-player">
+        <audio controls preload="metadata">
+          <source src="{{ page.audio_url | relative_url }}">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    {% else %}
+      <div class="content-status-note" role="note">
+        <strong>Audio coming soon.</strong>
+        <span>This written preview is available now; the episode will be presented as listenable only after audio is published.</span>
+      </div>
     {% endif %}
 
     <div class="post-content">
