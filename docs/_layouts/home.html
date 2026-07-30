@@ -5,24 +5,24 @@ layout: default
 <section class="home-hero phase-two-hero">
   <div class="container phase-two-hero-grid">
     <div class="phase-two-hero-copy">
-      <p class="hero-kicker">Latte &amp; Lounge</p>
-      <h1>A Sacred Pause Before the World Gets Loud<span class="terracotta-dot">.</span></h1>
+      <p class="hero-kicker">For professional women who love God and carry a lot</p>
+      <h1>Set your day with God before your day begins setting you<span class="terracotta-dot">.</span></h1>
 
       <div class="hero-mini-divider" aria-hidden="true"><span>♡</span></div>
 
       <p class="hero-subtitle">
-        Start your day anchored in God through coffee, conversation, prayer, and practical encouragement before the demands of life begin.
+        Latte &amp; Lounge is a place to bring God what you are carrying, talk with Him honestly, and prepare spiritually and emotionally for the work, people, decisions, and responsibilities ahead.
       </p>
 
       <div class="hero-actions">
-        <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Start Your Morning</a>
-        <a class="button secondary" href="{{ '/podcast/' | relative_url }}">Listen to the Podcast</a>
+        <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Begin Your Morning</a>
+        <a class="button secondary" href="{{ '/about/' | relative_url }}">Meet Samatra</a>
       </div>
 
       <div class="hero-promise-row" aria-label="Latte and Lounge promises">
         <span class="hero-promise-pill">Scripture</span>
         <span class="hero-promise-pill">Prayer</span>
-        <span class="hero-promise-pill">Reflection</span>
+        <span class="hero-promise-pill">Real Conversation</span>
       </div>
     </div>
 
@@ -36,7 +36,7 @@ layout: default
 
       <div class="hero-floating-card">
         <p>Anchored instead of anxious.</p>
-        <span>Morning faith ritual</span>
+        <span>A sacred pause before the world gets loud.</span>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ layout: default
 <section class="home-lower-refinement">
   <div class="container home-lower-grid">
     <div class="home-lower-main">
-      <p class="home-section-label">Morning Reflections</p>
+      <p class="home-section-label">For the Day Ahead</p>
 
       <div class="home-blog-grid editorial-grid">
         {% for post in site.posts limit:6 %}
@@ -63,7 +63,7 @@ layout: default
             {% endif %}
 
             <div class="home-blog-content">
-              <span class="home-blog-category">{{ post.category | default: "Morning Reflection" }}</span>
+              <span class="home-blog-category">{{ post.category | default: "Set Your Day" }}</span>
               <h3>{{ post.title }}</h3>
               <p>{{ post.excerpt | strip_html | truncate: 95 }}</p>
               <span class="home-blog-read-more">Read More →</span>
@@ -74,9 +74,9 @@ layout: default
         <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
           <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
           <div class="home-blog-content">
-            <span class="home-blog-category">Before the World Wakes</span>
-            <h3>Starting With Surrender</h3>
-            <p>Why the first moment with God changes everything that follows.</p>
+            <span class="home-blog-category">Set Your Day</span>
+            <h3>Before the List Begins</h3>
+            <p>Bring God the work, people, decisions, and responsibilities already on your mind.</p>
             <span class="home-blog-read-more">Read More →</span>
           </div>
         </a>
@@ -84,9 +84,9 @@ layout: default
         <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
           <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
           <div class="home-blog-content">
-            <span class="home-blog-category">Faith in the Boardroom</span>
-            <h3>Excellence Without Exhaustion</h3>
-            <p>Leading with faith, wisdom, and boundaries in every season.</p>
+            <span class="home-blog-category">Faith at Work</span>
+            <h3>Lead From a Biblical Worldview</h3>
+            <p>Practical wisdom for decisions, relationships, integrity, and responsibility.</p>
             <span class="home-blog-read-more">Read More →</span>
           </div>
         </a>
@@ -94,9 +94,9 @@ layout: default
         <a class="home-blog-card" href="{{ '/prayer-resources/' | relative_url }}">
           <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
           <div class="home-blog-content">
-            <span class="home-blog-category">Sacred Pause</span>
-            <h3>A Prayer for Overwhelmed Hearts</h3>
-            <p>A simple prayer to reset when life feels like too much.</p>
+            <span class="home-blog-category">Raw &amp; Real Conversations</span>
+            <h3>When You Feel Heavy</h3>
+            <p>You do not need perfect words or all the answers before you come to God.</p>
             <span class="home-blog-read-more">Read More →</span>
           </div>
         </a>
@@ -104,16 +104,16 @@ layout: default
         <a class="home-blog-card" href="{{ '/podcast/' | relative_url }}">
           <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
           <div class="home-blog-content">
-            <span class="home-blog-category">Anchored Living</span>
-            <h3>Peace Before Pressure</h3>
-            <p>Finding calm before the chaos begins and responsibility calls.</p>
+            <span class="home-blog-category">Women Who Lead</span>
+            <h3>Wisdom for the Next Level</h3>
+            <p>Honest guidance for women navigating new responsibility and unfamiliar rooms.</p>
             <span class="home-blog-read-more">Read More →</span>
           </div>
         </a>
       </div>
 
       <div class="home-blog-cta-row">
-        <a class="text-link" href="{{ '/blog/' | relative_url }}">View the Blog →</a>
+        <a class="text-link" href="{{ '/blog/' | relative_url }}">Explore the Conversations →</a>
       </div>
     </div>
 
@@ -145,7 +145,7 @@ layout: default
                 </div>
               {% else %}
                 <h3>Latte &amp; Lounge Podcast</h3>
-                <p>Short faith-filled conversations are coming soon.</p>
+                <p>Short, honest conversations for faith, work, leadership, and everyday life are coming soon.</p>
                 <div class="home-podcast-rail-actions">
                   <a class="button primary" href="{{ '/podcast/' | relative_url }}">View Podcast</a>
                 </div>
