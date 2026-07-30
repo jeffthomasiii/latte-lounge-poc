@@ -1,0 +1,168 @@
+/* Latte & Lounge guide-alignment fixes
+   Truthful states, accessible UI colors, focus visibility, and reduced motion. */
+
+:root {
+  --ll-action: #A84A40;
+  --ll-muted-text: #765A4A;
+  --ll-sage-deep: #5F7058;
+  --ll-focus: #665044;
+}
+
+/* Accessible action color while preserving official Terracotta for brand accents. */
+.button.primary,
+.site-nav .nav-link.nav-cta,
+.mobile-nav-cta {
+  background: var(--ll-action);
+  border-color: var(--ll-action);
+  color: #fff;
+}
+
+.button.primary:hover,
+.site-nav .nav-link.nav-cta:hover,
+.site-nav .nav-link.nav-cta.is-active,
+.mobile-nav-cta:hover,
+.mobile-nav-cta.is-active {
+  background: var(--soft-mocha);
+  border-color: var(--soft-mocha);
+  color: #fff;
+}
+
+.text-link,
+.collection-card-link,
+.ll-card-link,
+.editorial-content-card__action,
+.editorial-content-card__kicker,
+.listing-card h2 a:hover,
+.quiet-link-list a:hover {
+  color: var(--ll-action);
+}
+
+/* Increase normal-text contrast without changing the official palette. */
+.ll-hero-copy-text,
+.ll-section-heading > p,
+.ll-recognition-copy p,
+.ll-founder-copy p,
+.ll-feature-copy p,
+.ll-connect-copy p,
+.editorial-page-hero__subtitle,
+.editorial-intro-copy,
+.editorial-split-section__copy,
+.editorial-callout-section > div:last-child,
+.blog-intro-band > div:last-child,
+.editorial-section-heading > p,
+.editorial-content-card__body > p:not(.editorial-content-card__kicker),
+.editorial-post-deck,
+.editorial-post-aside,
+.footer-link-list a,
+.footer-signup-card p,
+.collection-feature-strip p,
+.collection-feature-note span,
+.collection-card p,
+.page-subtitle,
+.post-meta {
+  color: var(--ll-muted-text);
+}
+
+.ll-anchor-badge {
+  background: rgba(95, 112, 88, 0.96);
+  color: #fff;
+}
+
+.footer-terracotta-strip {
+  background: var(--ll-action);
+  color: #fff;
+}
+
+.footer-strip-inner,
+.footer-strip-inner .script-amp {
+  color: #fff;
+}
+
+/* Consistent pillar icon family. */
+.ll-pillar-icon img {
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+
+.ll-pillar-icon svg {
+  display: block;
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Honest content-status panels. */
+.collection-status-panel {
+  max-width: 780px;
+  margin: 2rem auto 0;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--ll-line);
+  border-radius: 18px;
+  background: var(--ll-paper);
+  box-shadow: var(--ll-shadow-soft);
+  text-align: left;
+}
+
+.collection-status-panel h2 {
+  margin: 0 0 1rem;
+}
+
+.collection-status-panel p {
+  color: var(--ll-muted-text);
+}
+
+.content-status-note {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--muted-gold);
+  background: rgba(231, 214, 194, 0.35);
+  color: var(--ll-muted-text);
+}
+
+.content-status-note strong {
+  color: var(--soft-mocha);
+}
+
+.podcast-player {
+  margin: 1.5rem 0 2rem;
+}
+
+.podcast-player audio {
+  width: 100%;
+}
+
+/* Visible keyboard focus across interactive controls. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+audio:focus-visible {
+  outline: 3px solid var(--ll-focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--cream);
+}
+
+/* Respect the user's motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
