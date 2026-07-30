@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Latte &amp; Lounge coffee cup</title>
+  <desc id="desc">A warm mocha coffee cup and saucer with terracotta steam.</desc>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Steam -->
+    <path d="M250 52c34 48-19 77-17 126 1 30 23 48 28 76" stroke="#D36A5C" stroke-width="22"/>
+    <path d="M292 118c25 33-10 56-7 91 2 19 15 31 19 47" stroke="#D36A5C" stroke-width="15"/>
+
+    <!-- Cup rim and coffee -->
+    <path d="M112 267c0-25 53-43 144-43s144 18 144 43" stroke="#8B6E5A" stroke-width="18"/>
+    <ellipse cx="256" cy="264" rx="94" ry="20" fill="#C8A668" opacity=".78" stroke="none"/>
+
+    <!-- Cup body -->
+    <path d="M112 267c4 106 58 163 144 163s140-57 144-163" stroke="#8B6E5A" stroke-width="18"/>
+
+    <!-- Handle -->
+    <path d="M397 285c72-8 81 82 18 112-14 7-29 10-44 10" stroke="#8B6E5A" stroke-width="18"/>
+
+    <!-- Saucer -->
+    <path d="M92 427c32 30 111 43 164 43s132-13 164-43" stroke="#8B6E5A" stroke-width="18"/>
+  </g>
+</svg>
