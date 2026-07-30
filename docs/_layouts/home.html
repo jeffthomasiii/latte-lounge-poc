@@ -2,175 +2,175 @@
 layout: default
 ---
 
-<section class="home-hero phase-two-hero">
-  <div class="container phase-two-hero-grid">
-    <div class="phase-two-hero-copy">
-      <p class="hero-kicker">For professional women who love God and carry a lot</p>
-      <h1>Set your day with God before your day begins setting you<span class="terracotta-dot">.</span></h1>
-
-      <div class="hero-mini-divider" aria-hidden="true"><span>♡</span></div>
-
-      <p class="hero-subtitle">
-        Latte &amp; Lounge is a place to bring God what you are carrying, talk with Him honestly, and prepare spiritually and emotionally for the work, people, decisions, and responsibilities ahead.
-      </p>
-
-      <div class="hero-actions">
-        <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Begin Your Morning</a>
-        <a class="button secondary" href="{{ '/about/' | relative_url }}">Meet Samatra</a>
-      </div>
-
-      <div class="hero-promise-row" aria-label="Latte and Lounge promises">
-        <span class="hero-promise-pill">Scripture</span>
-        <span class="hero-promise-pill">Prayer</span>
-        <span class="hero-promise-pill">Real Conversation</span>
-      </div>
-    </div>
-
-    <div class="phase-two-hero-media">
-      <figure class="phase-two-hero-photo">
-        <img
-          src="{{ '/assets/images/home-hero-latte-journal.jpg' | relative_url }}"
-          alt="Latte beside a journal in soft morning light"
-        >
-      </figure>
-
-      <div class="hero-floating-card">
-        <p>Anchored instead of anxious.</p>
-        <span>A sacred pause before the world gets loud.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 {% assign podcast_episodes = site.podcast | sort: "episode" | reverse %}
 {% assign latest_episode = podcast_episodes | first %}
+{% assign latest_post = site.posts | first %}
 
-<section class="home-lower-refinement">
-  <div class="container home-lower-grid">
-    <div class="home-lower-main">
-      <p class="home-section-label">For the Day Ahead</p>
-
-      <div class="home-blog-grid editorial-grid">
-        {% for post in site.posts limit:6 %}
-          <a class="home-blog-card" href="{{ post.url | relative_url }}">
-            {% assign image_index = forloop.index | modulo: 3 %}
-            {% if image_index == 1 %}
-              <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
-            {% elsif image_index == 2 %}
-              <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
-            {% else %}
-              <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
-            {% endif %}
-
-            <div class="home-blog-content">
-              <span class="home-blog-category">{{ post.category | default: "Set Your Day" }}</span>
-              <h3>{{ post.title }}</h3>
-              <p>{{ post.excerpt | strip_html | truncate: 95 }}</p>
-              <span class="home-blog-read-more">Read More →</span>
-            </div>
-          </a>
-        {% endfor %}
-
-        <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
-          <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
-          <div class="home-blog-content">
-            <span class="home-blog-category">Set Your Day</span>
-            <h3>Before the List Begins</h3>
-            <p>Bring God the work, people, decisions, and responsibilities already on your mind.</p>
-            <span class="home-blog-read-more">Read More →</span>
-          </div>
-        </a>
-
-        <a class="home-blog-card" href="{{ '/blog/' | relative_url }}">
-          <img class="home-blog-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
-          <div class="home-blog-content">
-            <span class="home-blog-category">Faith at Work</span>
-            <h3>Lead From a Biblical Worldview</h3>
-            <p>Practical wisdom for decisions, relationships, integrity, and responsibility.</p>
-            <span class="home-blog-read-more">Read More →</span>
-          </div>
-        </a>
-
-        <a class="home-blog-card" href="{{ '/prayer-resources/' | relative_url }}">
-          <img class="home-blog-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
-          <div class="home-blog-content">
-            <span class="home-blog-category">Raw &amp; Real Conversations</span>
-            <h3>When You Feel Heavy</h3>
-            <p>You do not need perfect words or all the answers before you come to God.</p>
-            <span class="home-blog-read-more">Read More →</span>
-          </div>
-        </a>
-
-        <a class="home-blog-card" href="{{ '/podcast/' | relative_url }}">
-          <img class="home-blog-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
-          <div class="home-blog-content">
-            <span class="home-blog-category">Women Who Lead</span>
-            <h3>Wisdom for the Next Level</h3>
-            <p>Honest guidance for women navigating new responsibility and unfamiliar rooms.</p>
-            <span class="home-blog-read-more">Read More →</span>
-          </div>
-        </a>
+<div class="ll-home">
+  <section class="ll-hero">
+    <div class="container ll-hero-grid">
+      <div class="ll-hero-copy">
+        <p class="ll-eyebrow">For professional women who love God and carry a lot</p>
+        <h1>Set your day with <em>God</em> before your day begins setting you.</h1>
+        <p class="ll-hero-tagline">A sacred pause before the world gets loud.</p>
+        <p class="ll-hero-copy-text">
+          Before responsibilities. Before decisions. Before meetings. Before pressure. This is your space to pause, breathe, and meet with God so you can move through the day with peace, purpose, and wisdom.
+        </p>
+        <div class="ll-hero-actions">
+          <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Start Your Morning</a>
+          <a class="button secondary" href="{{ '/about/' | relative_url }}">Meet Samatra</a>
+        </div>
+        <p class="ll-hero-note">Coffee for the woman building her life</p>
       </div>
 
-      <div class="home-blog-cta-row">
-        <a class="text-link" href="{{ '/blog/' | relative_url }}">Explore the Conversations →</a>
+      <div class="ll-hero-media">
+        <figure class="ll-hero-image">
+          <img src="{{ '/assets/images/home-hero-latte-journal.jpg' | relative_url }}" alt="Latte and journal in warm morning light">
+        </figure>
+        <div class="ll-anchor-badge">Anchored instead of anxious.</div>
       </div>
     </div>
+  </section>
 
-    <aside class="home-right-rail" aria-label="Scripture and podcast highlights">
-      <div>
-        <p class="home-section-label">Scripture</p>
-        <div class="home-scripture-card">
-          <p class="home-scripture-quote">Be still, and know that I am God.</p>
-          <p class="home-scripture-reference">Psalm 46:10</p>
-          <div class="scripture-card-divider" aria-hidden="true"></div>
+  <section class="ll-recognition">
+    <div class="container">
+      <div class="ll-recognition-card">
+        <img src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Open Bible, candle, and quiet morning setting">
+        <div class="ll-recognition-copy">
+          <p class="ll-section-label">Before everyone needs something from you</p>
+          <h2>You wake up already carrying so much.</h2>
+          <p>
+            The list may begin before your feet touch the floor: people to serve, decisions to make, conversations to have, and responsibilities that cannot be ignored. Latte &amp; Lounge is your reminder that you do not have to enter any of it alone.
+          </p>
+          <p>
+            Bring God what you are carrying. Be honest. Let Him steady you before you begin pouring into everyone else.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div>
-        <p class="home-section-label">Podcast</p>
-        <div class="home-podcast-stack">
-          <div class="home-podcast-rail-card">
-            <div class="home-podcast-rail-art">
-              <img src="{{ '/assets/images/logo-latte-lounge-full.png' | relative_url }}" alt="Latte & Lounge Podcast">
-            </div>
+  <section class="ll-pillars">
+    <div class="container">
+      <div class="ll-section-heading">
+        <div>
+          <p class="ll-section-label">Faith for real life</p>
+          <h2>Begin grounded. Live with intention.</h2>
+        </div>
+        <p>Scripture, honest conversation, and practical wisdom for the mornings, workplaces, relationships, and leadership moments that shape your life.</p>
+      </div>
 
-            <div class="home-podcast-rail-copy">
-              <p class="eyebrow">Latest Episode</p>
-              {% if latest_episode %}
-                <h3>{{ latest_episode.title }}</h3>
-                <p>{{ latest_episode.excerpt | strip_html | truncate: 120 }}</p>
-                <div class="home-podcast-rail-actions">
-                  <a class="button primary" href="{{ latest_episode.url | relative_url }}">Listen Now</a>
-                </div>
-              {% else %}
-                <h3>Latte &amp; Lounge Podcast</h3>
-                <p>Short, honest conversations for faith, work, leadership, and everyday life are coming soon.</p>
-                <div class="home-podcast-rail-actions">
-                  <a class="button primary" href="{{ '/podcast/' | relative_url }}">View Podcast</a>
-                </div>
-              {% endif %}
-            </div>
-          </div>
+      <div class="ll-pillar-grid">
+        <a class="ll-pillar-card" href="{{ '/prayer-resources/' | relative_url }}">
+          <span class="ll-pillar-icon">☕</span>
+          <h3>Set Your Day</h3>
+          <p>Begin with God through prayer, Scripture, and honest reflection before the calendar fills up.</p>
+          <span class="ll-card-link">Explore</span>
+        </a>
 
-          {% for episode in podcast_episodes offset:1 limit:1 %}
-            <a class="home-podcast-mini-row" href="{{ episode.url | relative_url }}">
-              <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="{{ episode.title }} episode artwork">
-              <div class="home-podcast-mini-copy">
-                <span>EP. {{ episode.episode }}</span>
-                <strong>{{ episode.title }}</strong>
-                <p>{{ episode.excerpt | strip_html | truncate: 72 }}</p>
-              </div>
-              <span class="home-podcast-mini-time">12:34</span>
-              <span class="home-podcast-mini-play" aria-hidden="true">▶</span>
-            </a>
-          {% endfor %}
+        <a class="ll-pillar-card" href="{{ '/blog/' | relative_url }}">
+          <span class="ll-pillar-icon">“ ”</span>
+          <h3>Raw &amp; Real Conversations</h3>
+          <p>Talk honestly about faith, emotional weight, identity, transitions, and the things women often carry quietly.</p>
+          <span class="ll-card-link">Read</span>
+        </a>
 
-          <div class="home-podcast-cta-row">
-            <a class="text-link" href="{{ '/podcast/' | relative_url }}">All Episodes →</a>
-          </div>
+        <a class="ll-pillar-card" href="{{ '/blog/' | relative_url }}">
+          <span class="ll-pillar-icon">▣</span>
+          <h3>Faith at Work</h3>
+          <p>Apply a biblical worldview to integrity, relationships, difficult decisions, boundaries, and responsibility.</p>
+          <span class="ll-card-link">Learn</span>
+        </a>
+
+        <a class="ll-pillar-card" href="{{ '/podcast/' | relative_url }}">
+          <span class="ll-pillar-icon">◇</span>
+          <h3>Women Who Lead</h3>
+          <p>Receive practical wisdom for new responsibility, unfamiliar rooms, and leadership without pretense.</p>
+          <span class="ll-card-link">Listen</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ll-founder">
+    <div class="container">
+      <div class="ll-founder-card">
+        <img src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Warm coffee moment representing Samatra's morning rhythm">
+        <div class="ll-founder-copy">
+          <p class="ll-section-label">Hi, I’m Samatra</p>
+          <h2>I know what it feels like to lead, transition, and still need God’s direction.</h2>
+          <p>
+            Latte &amp; Lounge began during a demanding leadership transition. As the weight of responsibility grew, I learned that when I met honestly with God before beginning my day, the trajectory of the day changed.
+          </p>
+          <p>
+            I did not need a perfect routine. I needed to bring Him the truth, ask for wisdom, and let Him anchor me before I entered the work, decisions, and people ahead.
+          </p>
+          <a class="text-link" href="{{ '/about/' | relative_url }}">Read Samatra’s Story →</a>
+          <div class="ll-founder-signature">Samatra ♡</div>
+        </div>
+        <img class="ll-founder-side-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge journal and brand card">
+      </div>
+    </div>
+  </section>
+
+  <section class="ll-scripture">
+    <div class="container">
+      <div class="ll-scripture-card">
+        <blockquote>Be still, and know that I am God.</blockquote>
+        <cite>Psalm 46:10</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="ll-features">
+    <div class="container ll-feature-grid">
+      <article class="ll-feature-card">
+        <div class="ll-feature-copy">
+          <p class="ll-section-label">Listen on the podcast</p>
+          {% if latest_episode %}
+            <h2>{{ latest_episode.title }}</h2>
+            <p>{{ latest_episode.excerpt | strip_html | truncate: 155 }}</p>
+            <a class="text-link" href="{{ latest_episode.url | relative_url }}">Listen Now →</a>
+          {% else %}
+            <h2>Latte &amp; Lounge Podcast</h2>
+            <p>Real conversations, biblical wisdom, and practical encouragement for faith, work, leadership, and everyday life.</p>
+            <a class="text-link" href="{{ '/podcast/' | relative_url }}">Explore the Podcast →</a>
+          {% endif %}
+        </div>
+        <img src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge podcast feature artwork">
+      </article>
+
+      <article class="ll-feature-card">
+        <div class="ll-feature-copy">
+          <p class="ll-section-label">Recent reflection</p>
+          {% if latest_post %}
+            <h2>{{ latest_post.title }}</h2>
+            <p>{{ latest_post.excerpt | strip_html | truncate: 155 }}</p>
+            <a class="text-link" href="{{ latest_post.url | relative_url }}">Read the Reflection →</a>
+          {% else %}
+            <h2>The morning determines more than you think.</h2>
+            <p>Your first conversation can shape how you carry everything that follows.</p>
+            <a class="text-link" href="{{ '/blog/' | relative_url }}">Read the Blog →</a>
+          {% endif %}
+        </div>
+        <img src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Journal, Scripture, and warm morning reflection">
+      </article>
+    </div>
+  </section>
+
+  <section class="ll-connect">
+    <div class="container">
+      <div class="ll-connect-card">
+        <img src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte in warm morning light">
+        <div class="ll-connect-copy">
+          <p class="ll-section-label">Stay connected</p>
+          <h2>Let’s keep the conversation going.</h2>
+          <p>Receive Scripture, honest reflection, new episodes, and practical encouragement for the day ahead.</p>
+        </div>
+        <div class="ll-connect-actions">
+          <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
         </div>
       </div>
-    </aside>
-  </div>
-</section>
+    </div>
+  </section>
+</div>
