@@ -1,45 +1,86 @@
 ---
 layout: page
-title: Blog
-eyebrow: "Read"
+title: Reflections
+eyebrow: "The Latte & Lounge Journal"
 subtitle: "Scripture, honest conversation, and practical wisdom for faith, work, leadership, and everyday life."
+hero_image: "/assets/images/latte-lounge-reflection-feature.webp"
+hero_image_alt: "Open morning reflection journal with a latte and gold pen"
+hero_badge: "Faith that speaks to what you carry"
+page_class: "blog-editorial-page"
 content_width: wide
-collection_style: true
 ---
 
-<div class="collection-feature-strip">
+{% assign featured_post = site.posts | first %}
+
+{% if featured_post %}
+<section class="blog-featured-story">
+  <div class="blog-featured-story__media">
+    <img src="{{ '/assets/images/latte-lounge-reflection-feature.webp' | relative_url }}" alt="Morning journal and latte in warm sunlight">
+  </div>
+  <div class="blog-featured-story__copy">
+    <p class="ll-section-label">Featured reflection</p>
+    <p class="editorial-content-card__kicker">{{ featured_post.category | default: "Set Your Day" }}</p>
+    <h2>{{ featured_post.title }}</h2>
+    <p>{{ featured_post.excerpt | strip_html | truncate: 220 }}</p>
+    <a class="button primary" href="{{ featured_post.url | relative_url }}">Read the Reflection</a>
+  </div>
+</section>
+{% endif %}
+
+<section class="blog-intro-band">
   <div>
-    <p class="eyebrow">Latte &amp; Lounge Blog</p>
+    <p class="ll-section-label">Come as you are</p>
     <h2>Faith that speaks to what you actually carry.</h2>
-    <p>These reflections are for the woman whose mind wakes up with a list: work to do, people to care for, decisions to make, and responsibilities to carry. Come as you are, bring God what is real, and find Scripture-rooted wisdom for the day ahead.</p>
+  </div>
+  <div>
+    <p>These reflections are for the woman whose mind wakes up with a list: work to do, people to care for, decisions to make, and responsibilities to carry.</p>
+    <p>You do not need a perfect morning or polished words. Start with one honest conversation with God.</p>
+  </div>
+</section>
+
+<section class="blog-library-section">
+  <div class="editorial-section-heading editorial-section-heading--row">
+    <div>
+      <p class="ll-section-label">Recent conversations</p>
+      <h2>Read what meets you where you are.</h2>
+    </div>
+    <p>Explore Scripture-rooted reflections for mornings, emotional weight, work, leadership, relationships, and everyday decisions.</p>
   </div>
 
-  <div class="collection-feature-note">
-    <strong>Set your day before the list begins.</strong>
-    <span>You do not need a perfect morning or polished words. Start with one honest conversation with God.</span>
+  <div class="editorial-card-grid">
+    {% for post in site.posts %}
+      {% unless forloop.first %}
+        {% assign image_index = forloop.index | modulo: 3 %}
+        {% if image_index == 1 %}
+          {% assign card_image = '/assets/images/latte-lounge-hero.webp' %}
+          {% assign card_alt = 'Latte and linen journals in warm morning light' %}
+        {% elsif image_index == 2 %}
+          {% assign card_image = '/assets/images/latte-lounge-podcast-feature.webp' %}
+          {% assign card_alt = 'Latte and Lounge podcast with coffee and earbuds' %}
+        {% else %}
+          {% assign card_image = '/assets/images/latte-lounge-reflection-feature.webp' %}
+          {% assign card_alt = 'Open reflection journal beside a latte' %}
+        {% endif %}
+
+        {% include editorial-content-card.html
+          url=post.url
+          image=card_image
+          image_alt=card_alt
+          kicker=post.category
+          title=post.title
+          excerpt=post.excerpt
+          action="Read More"
+        %}
+      {% endunless %}
+    {% endfor %}
   </div>
-</div>
+</section>
 
-<p class="collection-section-label">Recent Conversations</p>
-
-<div class="collection-grid blog-grid">
-  {% for post in site.posts %}
-    <a class="collection-card" href="{{ post.url | relative_url }}">
-      {% assign image_index = forloop.index | modulo: 3 %}
-      {% if image_index == 1 %}
-        <img class="collection-card-image" src="{{ '/assets/images/home-photo-soft-mug.jpg' | relative_url }}" alt="Latte mug in soft morning light">
-      {% elsif image_index == 2 %}
-        <img class="collection-card-image" src="{{ '/assets/images/home-photo-brand-card.jpg' | relative_url }}" alt="Latte and Lounge brand card on a warm neutral surface">
-      {% else %}
-        <img class="collection-card-image" src="{{ '/assets/images/home-photo-candle-stillness.jpg' | relative_url }}" alt="Candle, coffee, and still morning atmosphere">
-      {% endif %}
-
-      <div class="collection-card-body">
-        <span class="collection-card-kicker">{{ post.category | default: "Set Your Day" }}</span>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-        <span class="collection-card-link">Read More →</span>
-      </div>
-    </a>
-  {% endfor %}
-</div>
+<section class="editorial-newsletter-panel">
+  <div>
+    <p class="ll-section-label">A sacred pause in your inbox</p>
+    <h2>Stay connected to the conversation.</h2>
+    <p>Receive new reflections, prayer, podcast episodes, and practical encouragement for the day ahead.</p>
+  </div>
+  <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+</section>
