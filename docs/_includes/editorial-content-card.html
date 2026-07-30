@@ -1,0 +1,15 @@
+<article class="editorial-content-card{% if include.featured %} editorial-content-card--featured{% endif %}">
+  <a class="editorial-content-card__link" href="{{ include.url | relative_url }}">
+    {% if include.image %}
+      <div class="editorial-content-card__media">
+        <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt | default: include.title }}">
+      </div>
+    {% endif %}
+    <div class="editorial-content-card__body">
+      {% if include.kicker %}<p class="editorial-content-card__kicker">{{ include.kicker }}</p>{% endif %}
+      <h2>{{ include.title }}</h2>
+      {% if include.excerpt %}<p>{{ include.excerpt }}</p>{% endif %}
+      <span class="editorial-content-card__action">{{ include.action | default: "Read More" }} <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>
