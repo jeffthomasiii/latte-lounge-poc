@@ -1,14 +1,22 @@
-# Latte & Lounge POC
+<p align="center">
+  <img src="docs/assets/images/logo-latte-lounge-wordmark.png" alt="Latte & Lounge" width="460">
+</p>
 
-A GitHub Pages proof-of-concept website for **Latte & Lounge**, a faith-based platform created by **Samatra** for professional women who love God and carry a lot.
+<p align="center"><strong>A sacred pause before the world gets loud.</strong></p>
+
+# Latte & Lounge
+
+A GitHub Pages website for **Latte & Lounge**, a faith-based platform created by **Samatra** for professional women who love God and carry a lot.
 
 **Live site:** https://jeffthomasiii.github.io/latte-lounge-poc/
+
+> The repository name retains `-poc` from the project’s original proof-of-concept phase. The project has moved beyond a basic POC and is now being developed as the active Latte & Lounge brand website and content platform.
 
 ## Project Snapshot
 
 Latte & Lounge helps professional women set their day with God before responsibilities, pressure, decisions, and other people begin setting it for them.
 
-The idea was born during a demanding transition in Samatra’s professional life. As she moved into regional leadership and carried greater responsibility, she noticed that the mornings she spent talking honestly with God—often over coffee at her kitchen island—changed the trajectory of her day.
+The idea developed during a demanding transition in Samatra’s professional life. As she moved into greater leadership responsibility, she noticed that mornings spent talking honestly with God—often over coffee at her kitchen island—changed the trajectory of the day.
 
 - **Founder:** Samatra
 - **Primary tagline:** A sacred pause before the world gets loud.
@@ -18,11 +26,20 @@ The idea was born during a demanding transition in Samatra’s professional life
 - **Primary audience:** Professional women who love God and carry a lot
 - **Content focus:** Scripture, prayer, honest conversations, faith at work, women in leadership, biblical decision-making, and wisdom passed forward
 
-This repository is currently a **proof of concept**, not the final production version of the brand website. Its purpose is to test the website structure, visual direction, content model, navigation, and early launch experience.
+## Brand Guides
+
+The current brand source of truth is maintained in [`brand-guides/`](brand-guides/README.md):
+
+1. [Creative Foundation](brand-guides/CREATIVE_FOUNDATION.md) — who the brand is, who it serves, and how it should feel
+2. [Brand Style Guide](brand-guides/BRAND_STYLE_GUIDE.md) — logo, color, typography, photography, and visual guardrails
+3. [Website Design System](brand-guides/WEBSITE_DESIGN_SYSTEM.md) — layouts, components, responsive behavior, accessibility, and implementation rules
+4. [Content Standards](brand-guides/CONTENT_STANDARDS.md) — Samatra’s voice, content pillars, writing structures, Scripture use, and editorial review
+
+When earlier project notes conflict with these current guides, use the guides first.
 
 ## Current Site Structure
 
-The site is organized as a small Jekyll website published through GitHub Pages from the `docs/` folder.
+The site is a Jekyll website published through GitHub Pages from the `docs/` folder.
 
 | Section | Path | Purpose |
 | --- | --- | --- |
@@ -31,36 +48,53 @@ The site is organized as a small Jekyll website published through GitHub Pages f
 | Blog | `/blog/` | Scripture, honest conversations, leadership wisdom, and practical reflections |
 | Podcast | `/podcast/` | Short reflections, prayers, interviews, and conversations |
 | Prayer Resources | `/prayer-resources/` | Honest prayers for real mornings, pressure, decisions, and heavy moments |
-| Contact | `/contact/` | Future contact, story, interview, collaboration, and development inquiries |
-| Subscribe | `/subscribe/` | Future email community and morning encouragement signup |
+| Contact | `/contact/` | Contact, story, interview, collaboration, and development inquiries |
+| Subscribe | `/subscribe/` | Email community and morning encouragement signup |
+
+## Current Content Pillars
+
+1. **Set Your Day** — prayer, Scripture, reflection, and preparation before responsibilities begin
+2. **Raw & Real Conversations** — honest conversations about emotional weight, transitions, relationships, boundaries, and real life
+3. **Faith at Work** — biblical wisdom for integrity, decisions, conflict, boundaries, and responsibility
+4. **Women Who Lead** — practical wisdom for growing responsibility and leadership situations women may not have been prepared for
+5. **A Biblical View of Everyday Life** — faith applied to relationships, communication, money, character, service, and ordinary choices
+6. **Wisdom Passed Forward** — interviews, personal lessons, and leadership conversations shared for another woman’s good
+
+See the [Content Standards](brand-guides/CONTENT_STANDARDS.md) for definitions and editorial guidance.
 
 ## Tech Stack
 
 - **GitHub Pages** for hosting
-- **Jekyll** for static site generation
-- **Markdown** for page, post, podcast, and prayer content
+- **Jekyll** for static-site generation
+- **Markdown** for pages, posts, podcast episodes, and prayer content
 - **Liquid** for layouts, includes, and reusable content patterns
-- **CSS** for the custom Latte & Lounge visual system
-- **Google Fonts** for the current free font implementation
+- **CSS** for the custom Latte & Lounge design system
+- **Google Fonts** for the current free web-font implementation
 
 ## Repository Structure
 
 ```text
 README.md
+brand-guides/
+  README.md
+  CREATIVE_FOUNDATION.md
+  BRAND_STYLE_GUIDE.md
+  WEBSITE_DESIGN_SYSTEM.md
+  CONTENT_STANDARDS.md
 
 docs/
-  _config.yml              # Site title, tagline, description, collections, and permalink settings
+  _config.yml              # Site metadata, collections, and permalink settings
   _data/
-    brand.yml              # Central brand values used across the site
+    brand.yml              # Reusable public-facing brand values
     navigation.yml         # Main navigation links
   _includes/               # Reusable HTML sections such as header and footer
-  _layouts/                # Page templates for home, posts, podcast episodes, and resources
+  _layouts/                # Templates for home, pages, posts, podcasts, and resources
   _posts/                  # Blog posts using Jekyll date-based filenames
   _podcast/                # Podcast episode collection
   _prayers/                # Prayer resource collection
   assets/
-    css/main.css           # Main visual styling, colors, fonts, spacing, and components
-    images/                # Logo, hero, lifestyle, and supporting site imagery
+    css/                    # Global styles, components, and responsive refinements
+    images/                 # Logo, favicon, hero, lifestyle, and supporting imagery
   index.md                 # Homepage source content
   about.md                 # About and founder story
   blog.md                  # Blog landing page
@@ -70,191 +104,49 @@ docs/
   subscribe.md             # Subscribe page
 ```
 
-## Brand and Messaging Foundation
+## Brand Implementation Summary
 
-### Core Brand Idea
-
-**Latte & Lounge helps professional women who love God set their day with Him before the work, people, decisions, and responsibilities ahead begin directing them.**
-
-### Spiritual Invitation
-
-Come to God honestly and bring Him what you are carrying.
-
-Latte & Lounge should never imply that a woman needs:
-
-- A perfect quiet-time routine
-- A particular prayer posture
-- A beautifully staged morning
-- An uninterrupted hour
-- The right Scripture already in mind
-- Polished words before she speaks to God
-
-Intentionality matters. Perfection is not required.
-
-### Desired Transformation
-
-A woman may arrive mentally overloaded, emotionally heavy, focused on everyone who needs her, or uncertain about what the day will require.
-
-The content should help her leave:
-
-- Having placed the day before God
-- Believing He has heard her
-- Spiritually grounded
-- Emotionally steadier
-- Prepared to make decisions
-- Ready to respond through a biblical worldview
-- Anchored instead of controlled by pressure
-
-## Voice and Tone
-
-Latte & Lounge should sound like **Samatra**.
-
-The voice is:
-
-- Warm
-- Direct
-- Honest
-- Conversational
-- Scripture-rooted
-- Emotionally aware
-- Practical
-- Nonjudgmental
-- Familiar
-- Spiritually confident
-- Unpretentious
-
-Primary voice reference:
-
-> A trusted auntie in the kitchen who loves God, tells the truth, listens without judgment, and shares what she has learned because she genuinely wants another woman to grow.
-
-The voice is not:
-
-- Condescending
-- Performative
-- Spiritually superior
-- Overly polished
-- Corporate
-- Artificially inspirational
-- Formulaic
-- Detached
-- Preachy
-- Judgmental
-
-Natural phrases and concepts to reinforce:
-
-- Set your day before your day sets you.
-- Bring God what you are carrying.
-- Come as you are.
-- No perfect routine. No pretense.
-- Raw and real conversation.
-- Faith for work, leadership, relationships, and everyday life.
-- Anchored instead of anxious.
-
-## Content Direction
-
-Preferred content formula:
-
-```text
-Story → Scripture → Honest Reflection → Practical Wisdom → Action or Prayer
-```
-
-### 1. Set Your Day
-
-Morning prayer, Scripture, reflection, and spiritual preparation before responsibilities begin.
-
-### 2. Raw & Real Conversations
-
-Nonjudgmental conversations about emotional heaviness, transitions, burnout, relationships, boundaries, disappointment, loneliness, and not having everything together.
-
-### 3. Faith at Work
-
-A biblical worldview applied to leadership, integrity, workplace relationships, decisions, conflict, responsibility, and professional life.
-
-### 4. Women Who Lead
-
-Wisdom for women entering greater responsibility, navigating unfamiliar rooms, making decisions, leading people, and growing without adequate preparation or mentorship.
-
-Samatra has a particular concern for women of color who may enter leadership spaces without access to the guidance, preparation, sponsorship, or mentorship they deserve.
-
-### 5. A Biblical View of Everyday Life
-
-Faith applied to marriage, relationships, ethics, communication, emotional responses, service, money, character, and ordinary choices.
-
-### 6. Wisdom Passed Forward
-
-Interviews, personal lessons, leadership conversations, and future mentorship or development experiences that allow women to share what they have learned for another woman’s good.
-
-## Current and Future Brand Expression
-
-### Current Focus
-
-- Website
-- Blog and written reflections
-- Prayer resources
-- Short podcast episodes
-- Interviews and conversations
-- Email community development
-
-### Developing Opportunities
-
-- Leadership resources
-- Guided conversations
-- Digital resources
-- Workshops
-- Community gatherings
-
-### Long-Term Vision
-
-- Mentorship
-- Coaching
-- Professional development
-- Leadership preparation
-- Personal growth pathways
-- Retreats or in-person experiences
-
-These future offers should not be marketed as available until they exist, but they are part of Samatra’s core vision rather than unrelated possibilities.
-
-## Brand System Notes
-
-The visual system should remain warm, elevated, peaceful, feminine, modern, grounded, and professional.
-
-The visual presentation may feel polished and premium, but it must not become so perfected that it contradicts the message of honest, accessible, non-prescriptive relationship with God.
-
-### Official Color Palette
+### Official Palette
 
 | Color | HEX | Typical Use |
 | --- | --- | --- |
-| Cream | `#F6F2ED` | Primary background and spacious layouts |
-| Latte Beige | `#E7D6C2` | Warm neutral sections and cards |
-| Soft Mocha | `#8B6E5A` | Primary text, icons, structure, and grounding |
+| Cream | `#F6F2ED` | Primary backgrounds and spacious layouts |
+| Latte Beige | `#E7D6C2` | Warm sections and cards |
+| Soft Mocha | `#8B6E5A` | Brand brown, icons, and structure |
 | Warm Taupe | `#8B7D6B` | Secondary text and muted contrast |
-| Muted Gold | `#C8A668` | Fine accents, separators, and premium details |
-| Terracotta | `#D36A5C` | CTA buttons, highlights, and signature personality moments |
-| Sage | `#A4B59B` | Optional supporting calm accent |
+| Muted Gold | `#C8A668` | Fine accents and separators |
+| Terracotta | `#D36A5C` | Calls to action and signature emphasis |
+| Sage | `#A4B59B` | Optional calm supporting accent |
 
-### Color Ratio Guidance
+### Current Web Typography
 
-- **70%** Cream + Latte Beige
-- **20%** Soft Mocha + Warm Taupe
-- **8%** Terracotta
-- **2%** Muted Gold
-- Sage may be used as a supporting accent, but it should not become dominant.
-
-### Current Font Implementation
-
-The proof of concept uses free Google Fonts as practical alternatives for the official typography direction:
-
-| Brand Role | Current Free Font | Purpose |
+| Brand Role | Current Web Font | Purpose |
 | --- | --- | --- |
-| Display / Headlines | Cormorant Garamond | Elegant editorial serif alternative |
-| Body / Navigation / UI | Montserrat | Clean modern sans-serif |
-| Accent Script | Sacramento | Script accent used sparingly |
+| Display / Headlines | Cormorant Garamond | Editorial serif alternative to Canela |
+| Body / Navigation / UI | Montserrat | Modern sans-serif alternative to Avenir Next |
+| Accent Script | Sacramento | Script alternative used sparingly |
 
-Font imports and CSS variables are managed in:
+See the [Brand Style Guide](brand-guides/BRAND_STYLE_GUIDE.md) for the official identity direction and usage rules.
+
+## Central Brand Data
+
+Reusable public brand language is maintained in:
 
 ```text
-docs/assets/css/main.css
+docs/_data/brand.yml
 ```
+
+Current values include:
+
+- Brand name
+- Founder
+- Primary and secondary taglines
+- Brand promise
+- Core message
+- Audience line
+- Short description
+
+Use this file when the same language appears in multiple templates. Do not hard-code alternate versions without a deliberate reason.
 
 ## Making Common Updates
 
@@ -276,8 +168,6 @@ Edit:
 docs/_data/brand.yml
 ```
 
-Use this for reusable brand language such as the name, founder, taglines, promise, core message, audience, and description.
-
 ### Update Navigation
 
 Edit:
@@ -286,31 +176,31 @@ Edit:
 docs/_data/navigation.yml
 ```
 
-To hide a page from the main navigation, remove or comment out its entry. The page may still remain accessible by direct URL unless it is unpublished or removed.
+Removing a page from navigation does not delete or unpublish the page.
 
 ### Update Homepage Copy
 
-Primary visible homepage content is controlled in:
+Primary homepage layout and visible copy are controlled in:
 
 ```text
 docs/_layouts/home.html
 ```
 
-Supporting homepage source content is in:
+Supporting source content is in:
 
 ```text
 docs/index.md
 ```
 
-### Update Styles, Colors, Fonts, and Components
+### Update Styles and Components
 
-Edit:
+Styles are loaded through several files in `docs/assets/css/`. The final implemented result depends on their order in:
 
 ```text
-docs/assets/css/main.css
+docs/_layouts/default.html
 ```
 
-This file controls the visual design system, including CSS variables, color palette, typography, buttons, cards, dividers, homepage sections, footer styling, and responsive behavior.
+Review the [Website Design System](brand-guides/WEBSITE_DESIGN_SYSTEM.md) before adding new global styles or components.
 
 ### Add a Blog Post
 
@@ -350,7 +240,7 @@ Place images in:
 docs/assets/images/
 ```
 
-Keep filenames consistent when possible so existing references do not need to be updated.
+Use descriptive filenames, preserve expected aspect ratios, optimize images for the web, and provide useful alt text where the image is meaningful.
 
 ## Local Preview
 
@@ -368,54 +258,51 @@ Then open the local URL shown in the terminal.
 ## Publishing Workflow
 
 1. Create a focused branch.
-2. Make edits in the appropriate files.
-3. Preview or validate the site when a local Jekyll environment is available.
-4. Open a pull request for review.
-5. Merge approved changes into `main`.
-6. GitHub Pages rebuilds the site from the `docs/` folder.
-7. Review the live site and refine as needed.
+2. Make edits in the appropriate content, component, or data files.
+3. Review the relevant brand guide.
+4. Preview or validate the site when a local Jekyll environment is available.
+5. Review desktop and mobile behavior.
+6. Open a pull request.
+7. Merge approved changes into `main`.
+8. Allow GitHub Pages to rebuild the site from `docs/`.
+9. Review the live site and refine if necessary.
 
-## Current POC Priorities
+## Current Development Priorities
 
-- Review the Samatra voice and vision copy across all pages.
-- Confirm the new content-pillar names and hierarchy.
-- Decide which pages should be public for the first launch.
-- Replace placeholder imagery with final brand-aligned images.
+- Continue refining Samatra’s voice and vision across all pages.
+- Validate the current content-pillar hierarchy through real content.
+- Decide which pages and features are ready for the first public launch.
+- Replace remaining placeholder imagery with final brand-aligned images.
 - Add a working email signup and official contact method.
 - Replace podcast audio placeholders with actual episodes.
-- Continue refining mobile spacing, accessibility, alt text, and color contrast.
-- Keep visual polish balanced with Samatra’s raw, welcoming, nonjudgmental voice.
+- Continue improving mobile spacing, accessibility, alt text, and color contrast.
+- Reduce unnecessary CSS duplication as components stabilize.
+- Keep visual polish balanced with Samatra’s raw, welcoming, and nonjudgmental voice.
 
-## Brand Guardrails
+## Current Product Scope
 
-Latte & Lounge should remain:
+### Active Focus
 
-- Faith-centered
-- Warm
-- Elevated
-- Peaceful
-- Feminine
-- Modern
-- Grounded
-- Emotionally intelligent
-- Professional
-- Honest
-- Nonjudgmental
-- Practical
+- Website
+- Blog and written reflections
+- Prayer resources
+- Short podcast episodes
+- Interviews and conversations
+- Email community development
 
-Avoid messaging or design that feels:
+### Future Possibilities
 
-- Pretentious
-- Spiritually superior
-- Overly churchy
-- Prescriptive
-- Shame-based
-- Corporate sterile
-- Productivity-first
-- Rustic farmhouse
-- Overly floral
-- Busy or cluttered
-- Trendy for trend’s sake
+- Leadership resources
+- Guided conversations
+- Digital resources
+- Workshops
+- Community gatherings
+- Mentorship
+- Coaching
+- Professional development
+- Retreats and in-person experiences
+
+Future offerings should not be presented as currently available until they have been developed and approved.
 
 ## Working Definition
 
