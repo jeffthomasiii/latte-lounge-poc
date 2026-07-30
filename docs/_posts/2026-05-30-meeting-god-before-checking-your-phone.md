@@ -1,11 +1,11 @@
 ---
 title: "Meeting God Before Checking Your Phone"
-category: "Before the World Wakes"
+category: "Set Your Day"
 ---
 
-It is easy to wake up and reach for the phone before reaching for peace.
+It is easy to wake up and reach for your phone before you have decided what will shape your morning.
 
-One quick glance becomes the weather, the messages, the calendar, the headlines, the emails, and the quiet pressure of everyone else’s needs entering your mind before your feet touch the floor.
+One quick glance becomes the weather, messages, calendar, headlines, emails, and the needs of everyone else entering your mind before your feet touch the floor.
 
 But what if the first voice shaping your morning was not your inbox?
 
@@ -20,28 +20,30 @@ Mark 1:35
 
 Jesus knew what it meant to be needed.
 
-People wanted His attention, His healing, His teaching, His presence, and His answers. Yet He still withdrew to pray.
+People wanted His attention, healing, teaching, presence, and answers. Yet He still made room to pray.
 
-That matters.
+That matters for those of us who wake up already thinking about the work, conversations, decisions, and people waiting for us.
 
-If Jesus made space to meet with the Father before meeting the needs around Him, maybe we need that same sacred pause too.
+Meeting with God first is not about completing a perfect routine. It is about remembering that you do not have to let the day take control before you have placed it before Him.
 
-This does not have to be complicated. Before checking your phone, try whispering a simple prayer:
+Your morning may be quiet, rushed, interrupted, or already moving. Start where you are. While you are getting dressed, making coffee, or preparing to leave, pray one honest sentence:
 
-“Lord, before I hear from the world, help me hear from You.”
+“Lord, before I hear from everyone else, help me hear from You.”
 
 ## Practice
 
-Tomorrow morning, pause before picking up your phone.
+Before picking up your phone tomorrow morning:
 
-Take one deep breath.
+Take one breath.
 
-Pray one honest sentence.
+Tell God what is already on your mind.
 
-Read one verse.
+Ask for wisdom for the decisions ahead.
 
-Let God have the first word.
+Read one verse if time allows.
+
+Let Him have the first word, and set your day before your day begins setting you.
 
 ## Prayer
 
-Lord, help me resist the urge to begin my day with noise. Teach me to meet with You before I give my attention to everything else. Anchor my heart in Your presence before the world gets loud. Amen.
+Lord, help me resist the urge to begin my day with noise and other people’s needs. Teach me to bring You the real morning, even when it is busy or imperfect. Give me wisdom, peace, and steadiness for what is ahead. Anchor my heart in Your presence before the world gets loud. Amen.
