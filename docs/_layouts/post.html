@@ -2,17 +2,46 @@
 layout: default
 ---
 
-<article class="post">
-  <div class="container narrow">
-    <p class="eyebrow">{{ page.category }}</p>
-    <h1>{{ page.title }}</h1>
+{% assign post_image = page.image | default: '/assets/images/latte-lounge-reflection-feature.webp' %}
 
-    {% if page.date %}
-      <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
-    {% endif %}
+<article class="editorial-post">
+  <header class="editorial-post-hero">
+    <div class="container editorial-post-hero__grid">
+      <div class="editorial-post-hero__copy">
+        <p class="ll-section-label">{{ page.category | default: "Latte & Lounge Reflection" }}</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.excerpt %}<p class="editorial-post-deck">{{ page.excerpt | strip_html }}</p>{% endif %}
+        <div class="editorial-post-meta">
+          {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
+          <span>Latte &amp; Lounge</span>
+        </div>
+      </div>
+      <figure class="editorial-post-hero__media">
+        <img src="{{ post_image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      </figure>
+    </div>
+  </header>
 
-    <div class="post-content">
+  <div class="container editorial-post-layout">
+    <aside class="editorial-post-aside">
+      <p class="ll-section-label">Before you continue</p>
+      <p>Take a breath. Bring God what is real. Read without rushing.</p>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">← All Reflections</a>
+    </aside>
+
+    <div class="editorial-post-body post-content">
       {{ content }}
     </div>
   </div>
+
+  <footer class="editorial-post-footer">
+    <div class="container editorial-newsletter-panel">
+      <div>
+        <p class="ll-section-label">Continue the conversation</p>
+        <h2>A sacred pause before the world gets loud.</h2>
+        <p>Receive new reflections, prayer, and practical encouragement for the day ahead.</p>
+      </div>
+      <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+    </div>
+  </footer>
 </article>
