@@ -3,18 +3,18 @@ layout: home
 title: Home
 ---
 
-Latte & Lounge was created for the woman who wakes up already carrying responsibility.
+Latte & Lounge was created for professional women who love God and carry a lot.
 
-Before the meetings, the inbox, the deadlines, the household needs, and the quiet emotional weight of being needed, this is an invitation to pause with God first.
+Before the meetings, inbox, decisions, household needs, and people already on your mind, this is an invitation to set your day with God before your day begins setting you.
 
-This is not about creating a perfect morning routine. It is about making space to breathe, pray, reflect, and begin the day anchored instead of anxious.
+This is not about creating a perfect morning routine. It is about coming to God honestly, bringing Him what you are carrying, and preparing spiritually and emotionally for what the day may require.
 
-## A quieter way to begin
+## Bring God the real morning
 
-Start with Scripture.
+Tell Him what feels heavy.
 
-Sit with an honest reflection.
+Pray over the work, people, and decisions ahead.
 
-Pray before the pressure begins.
+Let Scripture shape how you lead, respond, choose, and live.
 
-Then step into the day from a place of peace instead of panic.
+Then enter the day anchored instead of anxious.
