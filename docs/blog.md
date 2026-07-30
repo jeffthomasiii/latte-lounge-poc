@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Reflections
+description: "Scripture-rooted reflections and practical wisdom for faith, work, leadership, relationships, and everyday life."
 eyebrow: "The Latte & Lounge Journal"
 subtitle: "Scripture, honest conversation, and practical wisdom for faith, work, leadership, and everyday life."
 hero_image: "/assets/images/latte-lounge-reflection-feature.webp"
@@ -13,13 +14,15 @@ content_width: wide
 {% assign featured_post = site.posts | first %}
 
 {% if featured_post %}
+  {% assign featured_image = featured_post.image | default: '/assets/images/latte-lounge-reflection-feature.webp' %}
+  {% assign featured_image_alt = featured_post.image_alt | default: featured_post.title %}
 <section class="blog-featured-story">
   <div class="blog-featured-story__media">
-    <img src="{{ '/assets/images/latte-lounge-reflection-feature.webp' | relative_url }}" alt="Morning journal and latte in warm sunlight">
+    <img src="{{ featured_image | relative_url }}" alt="{{ featured_image_alt }}">
   </div>
   <div class="blog-featured-story__copy">
     <p class="ll-section-label">Featured Reflection</p>
-    <p class="editorial-content-card__kicker">{{ featured_post.category | default: "Set Your Day" }}</p>
+    <p class="editorial-content-card__kicker">{{ featured_post.pillar | default: featured_post.category | default: "Set Your Day" }}</p>
     <h2>{{ featured_post.title }}</h2>
     <p>{{ featured_post.excerpt | strip_html | truncate: 220 }}</p>
     <a class="button primary" href="{{ featured_post.url | relative_url }}">Read the Reflection</a>
@@ -52,21 +55,24 @@ content_width: wide
       {% unless forloop.first %}
         {% assign image_index = forloop.index | modulo: 3 %}
         {% if image_index == 1 %}
-          {% assign card_image = '/assets/images/latte-lounge-hero.webp' %}
-          {% assign card_alt = 'Latte and linen journals in warm morning light' %}
+          {% assign fallback_image = '/assets/images/latte-lounge-hero.webp' %}
+          {% assign fallback_alt = 'Latte and linen journals in warm morning light' %}
         {% elsif image_index == 2 %}
-          {% assign card_image = '/assets/images/latte-lounge-podcast-feature.webp' %}
-          {% assign card_alt = 'Latte and Lounge podcast with coffee and earbuds' %}
+          {% assign fallback_image = '/assets/images/latte-lounge-podcast-feature.webp' %}
+          {% assign fallback_alt = 'Latte and Lounge podcast artwork beside coffee and earbuds' %}
         {% else %}
-          {% assign card_image = '/assets/images/latte-lounge-reflection-feature.webp' %}
-          {% assign card_alt = 'Open reflection journal beside a latte' %}
+          {% assign fallback_image = '/assets/images/latte-lounge-reflection-feature.webp' %}
+          {% assign fallback_alt = 'Open reflection journal beside a latte' %}
         {% endif %}
+        {% assign card_image = post.image | default: fallback_image %}
+        {% assign card_alt = post.image_alt | default: fallback_alt %}
+        {% assign card_kicker = post.pillar | default: post.category %}
 
         {% include editorial-content-card.html
           url=post.url
           image=card_image
           image_alt=card_alt
-          kicker=post.category
+          kicker=card_kicker
           title=post.title
           excerpt=post.excerpt
           action="Read the Reflection"
@@ -78,9 +84,9 @@ content_width: wide
 
 <section class="editorial-newsletter-panel">
   <div>
-    <p class="ll-section-label">A sacred pause in your inbox</p>
-    <h2>Stay connected to the conversation.</h2>
-    <p>Receive new reflections, prayers, podcast episodes, and practical encouragement for real life.</p>
+    <p class="ll-section-label">Continue the conversation</p>
+    <h2>Bring the reflection into prayer.</h2>
+    <p>Use a short prayer resource to name what you are carrying and place the next part of your day before God.</p>
   </div>
-  <a class="button primary" href="{{ '/subscribe/' | relative_url }}">Join the Lounge</a>
+  <a class="button primary" href="{{ '/prayer-resources/' | relative_url }}">Explore Prayer Resources</a>
 </section>
