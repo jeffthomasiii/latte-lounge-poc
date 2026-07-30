@@ -1,15 +1,15 @@
 ---
 title: "When Your Mind Wakes Up Anxious"
-category: "Before the World Wakes"
+category: "Set Your Day"
 ---
 
 Some mornings, your body is still in bed but your mind is already in the meeting.
 
-Before the emails, the calendar, the needs, and the responsibilities, God invites you to come near.
+You are thinking about what needs to be done, who needs an answer, which conversation cannot be avoided, and how you are going to carry everything waiting for you.
 
-This is the sacred pause.
+Before you start solving the day, tell God the truth about what you are carrying.
 
-Not because everything is easy. Not because the day is empty. But because your soul needs to be anchored before your schedule starts speaking.
+This is the sacred pause—not because everything is calm, but because your soul needs to be anchored before your schedule starts speaking.
 
 ## Scripture Anchor
 
@@ -20,14 +20,14 @@ Not because everything is easy. Not because the day is empty. But because your s
 
 An anxious morning does not mean you lack faith. It may simply mean your heart is carrying more than it was designed to carry alone.
 
-Before you try to solve the whole day, pause with God.
+You do not need polished words or the perfect Scripture already in mind. You can begin with something as honest as:
 
-Breathe.
+“God, I feel heavy. I do not know why, and I do not know what to say. I need You to help me.”
 
-Pray.
+That is prayer too.
 
-Surrender the first weight before picking up the next responsibility.
+Place the work, the people, the decisions, and the unknowns before Him. Trust that He hears you, and ask Him for the wisdom and steadiness you will need.
 
 ## Prayer
 
-Lord, meet me in this morning. Quiet what is loud inside of me. Help me begin this day anchored in You instead of anxious about what is ahead. Amen.
+Lord, I feel the weight of this day before it has even begun. Help me bring You what is real instead of pretending I am fine. Give me wisdom for what I need to handle, peace for what I cannot control, and steadiness for whatever comes. Help me begin anchored in You instead of anxious about what is ahead. Amen.

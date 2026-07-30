@@ -10,13 +10,13 @@ collection_style: true
 <div class="collection-feature-strip">
   <div>
     <p class="eyebrow">Latte &amp; Lounge Podcast</p>
-    <h2>Short morning episodes for a quieter beginning.</h2>
-    <p>The Latte & Lounge podcast is being created as a short-form morning companion for professional women who want Scripture, prayer, honest reflection, and practical encouragement before the demands of the day begin.</p>
+    <h2>Real conversations for the day ahead.</h2>
+    <p>The Latte & Lounge podcast is being created for professional women who love God and carry a lot. Expect short morning reflections, honest prayers, practical conversations about faith and leadership, and interviews with women willing to share what they have learned.</p>
   </div>
 
   <div class="collection-feature-note">
     <strong>Listen before the world gets loud.</strong>
-    <span>Devotionals, sacred pause prayers, Scripture reflections, and lounge-style conversations for faith, work, leadership, and emotional health.</span>
+    <span>Come for Scripture, prayer, raw conversation, and wisdom for work, leadership, relationships, and everyday life.</span>
   </div>
 </div>
 

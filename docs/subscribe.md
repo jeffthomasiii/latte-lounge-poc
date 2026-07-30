@@ -1,18 +1,16 @@
 ---
 layout: page
 title: Subscribe
-eyebrow: "Begin Anchored"
-subtitle: "Receive devotionals, prayers, and reflections for the morning before the world gets loud."
+eyebrow: "Set Your Day"
+subtitle: "Receive Scripture, prayer, honest conversation, and practical wisdom for the day ahead."
 ---
 
-Begin your day anchored instead of anxious.
+Before the inbox, the decisions, the conversations, and the people who need you, take a moment to set your day with God.
 
-The Latte & Lounge email list will be created for professional women who want gentle, faith-filled encouragement before the demands of life begin.
+The Latte & Lounge email community is being created for professional women who love God and carry a lot. You can expect morning reflections, honest prayers, leadership wisdom, real conversations, and encouragement for living every part of life through a biblical worldview.
 
-You can expect devotionals, prayer resources, honest reflections, and practical encouragement designed to help you pause, breathe, pray, and meet with God before the world gets loud.
+No perfect routine. No pretense. Just a regular invitation to bring God what you are carrying and begin anchored instead of anxious.
 
 ## Coming soon
 
-Newsletter signup form coming soon.
-
-For the proof-of-concept site, this page is a placeholder for a future email platform such as MailerLite, ConvertKit, Substack, Flodesk, or another newsletter tool.
+The Latte & Lounge email community is coming soon. Signup details will be added here when they are ready.
