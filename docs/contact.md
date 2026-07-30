@@ -2,20 +2,20 @@
 layout: page
 title: Contact
 eyebrow: "Connect"
-subtitle: "Share a question, a story, a prayer need, or an idea for a future conversation."
+subtitle: "Share a question, a story, a prayer request, or an idea for a future conversation."
 ---
 
-Latte & Lounge is being built as a place for professional women to meet with God, speak honestly about what they carry, and learn from one another.
+Have a question, prayer request, story, or conversation you would like Latte & Lounge to explore? This will be the place to reach out.
 
 As the community grows, this page will support:
 
 - General questions and messages
-- Prayer resource suggestions
+- Prayer requests and suggestions for future prayer resources
 - Podcast feedback and conversation ideas
 - Stories from professional women
 - Collaboration and interview inquiries
-- Speaking, workshops, and event inquiries
-- Future mentorship and professional development interest
+- Speaking, workshop, and event inquiries
+- Interest in future mentorship and leadership-development opportunities
 
 ## Contact details coming soon
 

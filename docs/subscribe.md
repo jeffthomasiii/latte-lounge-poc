@@ -2,15 +2,15 @@
 layout: page
 title: Subscribe
 eyebrow: "Set Your Day"
-subtitle: "Receive Scripture, prayer, honest conversation, and practical wisdom for the day ahead."
+subtitle: "Receive Scripture, prayer, honest conversation, and practical wisdom for real life."
 ---
 
-Before the inbox, the decisions, the conversations, and the people who need you, take a moment to set your day with God.
+Before you open your inbox and begin responding to everyone who needs you, take a moment to set your day with God.
 
-The Latte & Lounge email community is being created for professional women who love God and carry a lot. You can expect morning reflections, honest prayers, leadership wisdom, real conversations, and encouragement for living every part of life through a biblical worldview.
+The Latte & Lounge email community is coming soon. When it opens, you will receive morning reflections, honest prayers, leadership wisdom, and encouragement for bringing your faith into work, relationships, decisions, and everyday life.
 
-No perfect routine. No pretense. Just a regular invitation to bring God what you are carrying and begin anchored instead of anxious.
+No perfect routine. No pretense. Just a regular invitation to tell God what is true and begin anchored instead of anxious.
 
 ## Coming soon
 
-The Latte & Lounge email community is coming soon. Signup details will be added here when they are ready.
+Signup details will be added here when the email community is ready.

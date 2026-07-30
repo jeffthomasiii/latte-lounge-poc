@@ -11,7 +11,7 @@ collection_style: true
   <div>
     <p class="eyebrow">Prayer Library</p>
     <h2>Bring God what you are carrying.</h2>
-    <p>You do not need perfect words, the right Scripture already in mind, or a quiet uninterrupted hour. These short prayer resources are here to help you talk honestly with God in calm mornings, busy mornings, and moments when you simply know you need His help.</p>
+    <p>You do not need perfect words, the right Scripture already in mind, or a quiet, uninterrupted hour. These short prayers are here to help you talk honestly with God—whether your morning is quiet, rushed, emotionally heavy, or already underway.</p>
   </div>
 
   <div class="collection-feature-note">
@@ -32,7 +32,7 @@ collection_style: true
         <span class="collection-card-kicker">Prayer Resource</span>
         <h2>{{ prayer.title }}</h2>
         <p>{{ prayer.excerpt | strip_html | truncate: 150 }}</p>
-        <span class="collection-card-link">Open Resource →</span>
+        <span class="collection-card-link">Read the Prayer →</span>
       </div>
     </a>
   {% endfor %}
