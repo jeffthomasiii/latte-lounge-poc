@@ -1,0 +1,100 @@
+media:
+  - name: latte_lounge_images
+    label: Latte & Lounge Images
+    input: docs/assets/images
+    output: /assets/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: docs/_posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{title}.md"
+      field: false
+    view:
+      primary: title
+      fields: [title, pillar, scripture]
+      search: [title, excerpt, pillar, scripture]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The public title of the article.
+        options:
+          maxlength: 120
+
+      - name: excerpt
+        label: Short Description
+        type: text
+        required: true
+        description: A short summary used on article cards and beneath the article title.
+        options:
+          maxlength: 300
+
+      - name: pillar
+        label: Content Series
+        type: select
+        required: true
+        description: Choose the Latte & Lounge content series that best fits this article.
+        options:
+          values:
+            - Before the World Wakes
+            - Lounge Conversations
+            - Faith in the Boardroom
+            - Sacred Pause
+            - Anchored Living
+            - Scripture & Sips
+
+      - name: category
+        label: Legacy Category
+        type: string
+        hidden: true
+        description: Retained temporarily for compatibility with the proof-of-concept posts.
+
+      - name: image
+        label: Featured Image
+        type: image
+        required: true
+        description: Choose an existing Latte & Lounge image or upload a new article image.
+        options:
+          media: latte_lounge_images
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+      - name: image_alt
+        label: Image Description
+        type: string
+        required: true
+        description: Briefly describe the featured image for accessibility.
+        options:
+          maxlength: 180
+
+      - name: scripture
+        label: Scripture
+        type: string
+        description: Example: Psalm 46:10 or 1 Peter 5:7.
+        options:
+          maxlength: 80
+
+      - name: scripture_translation
+        label: Scripture Translation
+        type: select
+        description: Translation used for the Scripture quoted in the article.
+        options:
+          values: [ESV, NIV, CSB, KJV, NKJV, NLT, NASB, LSB]
+
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
+        description: Write or dictate the article here. The source Markdown stays hidden.
+        options:
+          format: markdown
+          switcher: false
+          media: false
