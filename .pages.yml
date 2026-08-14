@@ -78,7 +78,7 @@ content:
       - name: scripture
         label: Scripture
         type: string
-        description: Example: Psalm 46:10 or 1 Peter 5:7.
+        description: "Example: Psalm 46:10 or 1 Peter 5:7."
         options:
           maxlength: 80
 
