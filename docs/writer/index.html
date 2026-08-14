@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6F2ED">
+  <title>Samatra Writer | Latte & Lounge</title>
+  <meta name="description" content="Functional prototype for the Latte & Lounge Samatra Writer authoring experience.">
+  <link rel="icon" href="https://raw.githubusercontent.com/jeffthomasiii/latte-lounge-poc/main/docs/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F6F2ED;
+      --latte-beige: #E7D6C2;
+      --soft-mocha: #8B6E5A;
+      --warm-taupe: #8B7D6B;
+      --muted-gold: #C8A668;
+      --terracotta: #D36A5C;
+      --sage: #A4B59B;
+      --white-soft: #fffaf5;
+      --ink: #5f5148;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "Montserrat", system-ui, sans-serif;
+      --font-accent: "Sacramento", cursive;
+      --shadow: 0 18px 54px rgba(139,110,90,.11);
+      --border: 1px solid rgba(139,110,90,.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--cream); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--font-body);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(231,214,194,.55), transparent 30rem),
+        radial-gradient(circle at 100% 100%, rgba(164,181,155,.13), transparent 28rem),
+        var(--cream);
+    }
+
+    button, textarea, input { font: inherit; }
+    button { cursor: pointer; }
+    .hidden { display: none !important; }
+
+    .prototype-ribbon {
+      padding: .48rem 1rem;
+      text-align: center;
+      background: var(--soft-mocha);
+      color: var(--white-soft);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .writer-shell { min-height: calc(100vh - 31px); }
+    .writer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 1.25rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      color: var(--soft-mocha);
+      text-decoration: none;
+    }
+
+    .brand img { width: 42px; height: 42px; }
+    .brand-name {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .brand-tool {
+      display: block;
+      margin-top: .18rem;
+      color: var(--warm-taupe);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .save-status {
+      color: var(--warm-taupe);
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
+    .writer-main {
+      width: min(880px, 92%);
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5rem) 0 5rem;
+    }
+
+    .step { animation: enter .3s ease both; }
+    @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .eyebrow {
+      margin: 0 0 .65rem;
+      color: var(--terracotta);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--soft-mocha);
+      font-family: var(--font-display);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+    h1 { margin: 0; font-size: clamp(3rem, 9vw, 5.4rem); letter-spacing: -.035em; }
+    h2 { margin: 0; font-size: clamp(2.4rem, 7vw, 4rem); letter-spacing: -.025em; }
+    h3 { font-size: 1.7rem; }
+
+    .lead {
+      max-width: 690px;
+      margin: 1rem 0 2rem;
+      color: var(--warm-taupe);
+      font-size: clamp(.96rem, 2vw, 1.08rem);
+      line-height: 1.8;
+    }
+
+    .capture-card, .review-card, .success-card {
+      background: rgba(255,250,245,.86);
+      border: var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+    .capture-card { padding: clamp(1.2rem, 4vw, 2rem); }
+
+    .mode-switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .55rem;
+      max-width: 420px;
+      padding: .35rem;
+      margin-bottom: 1rem;
+      background: rgba(231,214,194,.42);
+      border-radius: 14px;
+    }
+    .mode-button {
+      min-height: 44px;
+      border: 0;
+      border-radius: 11px;
+      color: var(--warm-taupe);
+      background: transparent;
+      font-weight: 700;
+    }
+    .mode-button.active {
+      color: var(--soft-mocha);
+      background: var(--white-soft);
+      box-shadow: 0 5px 16px rgba(139,110,90,.09);
+    }
+
+    .dictation-note {
+      display: flex;
+      gap: .65rem;
+      align-items: flex-start;
+      margin: 0 0 1rem;
+      padding: .8rem 1rem;
+      border-left: 3px solid var(--sage);
+      background: rgba(164,181,155,.1);
+      color: var(--warm-taupe);
+      font-size: .8rem;
+      line-height: 1.55;
+    }
+
+    .thought-input {
+      display: block;
+      width: 100%;
+      min-height: 310px;
+      resize: vertical;
+      padding: 1.25rem;
+      color: var(--ink);
+      background: rgba(246,242,237,.58);
+      border: 1px solid rgba(139,110,90,.18);
+      border-radius: 16px;
+      outline: none;
+      font-size: 1rem;
+      line-height: 1.75;
+      transition: border .2s ease, box-shadow .2s ease;
+    }
+    .thought-input:focus {
+      border-color: rgba(211,106,92,.52);
+      box-shadow: 0 0 0 4px rgba(211,106,92,.08);
+    }
+    .thought-input::placeholder { color: rgba(139,125,107,.66); }
+
+    .capture-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: .65rem;
+      color: var(--warm-taupe);
+      font-size: .72rem;
+    }
+
+    .photo-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(139,110,90,.1);
+    }
+    .photo-button, .secondary-button, .ghost-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .72rem 1rem;
+      border: 1px solid rgba(139,110,90,.18);
+      border-radius: 999px;
+      color: var(--soft-mocha);
+      background: rgba(255,250,245,.8);
+      font-size: .76rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .photo-name { color: var(--warm-taupe); font-size: .76rem; }
+
+    .action-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .7rem;
+      margin-top: 1.5rem;
+    }
+    .primary-button {
+      min-height: 50px;
+      padding: .85rem 1.35rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      box-shadow: 0 10px 24px rgba(211,106,92,.22);
+    }
+    .primary-button:hover { filter: brightness(.97); transform: translateY(-1px); }
+    .primary-button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+    .ghost-button { border-color: transparent; background: transparent; }
+
+    .prototype-helper {
+      margin-top: .8rem;
+      text-align: right;
+    }
+    .text-button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--terracotta);
+      font-size: .72rem;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .notice {
+      margin: 1.2rem 0 0;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: rgba(200,166,104,.11);
+      border: 1px solid rgba(200,166,104,.24);
+      color: var(--warm-taupe);
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .review-header { margin-bottom: 1.4rem; }
+    .review-card { padding: clamp(1.2rem, 4vw, 2.2rem); }
+    .field-label {
+      display: block;
+      margin-bottom: .45rem;
+      color: var(--warm-taupe);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .title-input {
+      width: 100%;
+      padding: .2rem 0 .8rem;
+      border: 0;
+      border-bottom: 1px solid rgba(139,110,90,.17);
+      outline: none;
+      background: transparent;
+      color: var(--soft-mocha);
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 6vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .suggestion-card {
+      margin: 1.2rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(164,181,155,.3);
+      border-radius: 15px;
+      background: rgba(164,181,155,.08);
+    }
+    .suggestion-card strong { color: var(--soft-mocha); }
+    .suggestion-card p { margin: .35rem 0 .8rem; color: var(--warm-taupe); font-size: .85rem; line-height: 1.6; }
+    .suggestion-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .mini-button {
+      padding: .48rem .75rem;
+      border: 1px solid rgba(139,110,90,.18);
+      border-radius: 999px;
+      background: var(--white-soft);
+      color: var(--soft-mocha);
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .mini-button.accepted { border-color: rgba(164,181,155,.8); background: rgba(164,181,155,.18); }
+
+    .editor-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      padding: .9rem 0 .65rem;
+    }
+    .tool-button {
+      width: 38px;
+      height: 34px;
+      border: 1px solid rgba(139,110,90,.15);
+      border-radius: 8px;
+      background: rgba(246,242,237,.7);
+      color: var(--soft-mocha);
+      font-weight: 700;
+    }
+    .article-editor {
+      min-height: 380px;
+      padding: 1.25rem;
+      border: 1px solid rgba(139,110,90,.16);
+      border-radius: 16px;
+      outline: none;
+      background: #fffdf9;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+    .article-editor:focus { box-shadow: 0 0 0 4px rgba(211,106,92,.07); }
+    .article-editor h2 { margin: 1.7rem 0 .45rem; font-size: 1.75rem; }
+    .article-editor p { margin: 0 0 1rem; }
+
+    details.article-details {
+      margin-top: 1.2rem;
+      border-top: 1px solid rgba(139,110,90,.12);
+    }
+    details summary {
+      padding: 1.1rem 0;
+      color: var(--soft-mocha);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .8rem; padding-bottom: .4rem; }
+    .detail-item { padding: .9rem; border-radius: 12px; background: rgba(231,214,194,.18); }
+    .detail-item span { display: block; color: var(--warm-taupe); font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .detail-item strong { display: block; margin-top: .25rem; color: var(--soft-mocha); font-size: .84rem; }
+
+    .success-card {
+      max-width: 680px;
+      margin: 2rem auto 0;
+      padding: clamp(2rem, 7vw, 4rem);
+      text-align: center;
+    }
+    .success-mark {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      background: rgba(164,181,155,.22);
+      color: #64755e;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .success-card p { color: var(--warm-taupe); line-height: 1.7; }
+    .mock-note { margin-top: 1rem; color: var(--terracotta) !important; font-size: .72rem; font-weight: 700; }
+    .success-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+
+    .loading-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      background: rgba(246,242,237,.93);
+      backdrop-filter: blur(8px);
+    }
+    .loading-content { max-width: 470px; text-align: center; }
+    .loading-cup { font-size: 2.4rem; animation: float 1.2s ease-in-out infinite alternate; }
+    @keyframes float { to { transform: translateY(-7px); } }
+    .loading-content h2 { margin: .7rem 0 .4rem; font-size: 2.3rem; }
+    .loading-content p { color: var(--warm-taupe); }
+
+    @media (max-width: 640px) {
+      .prototype-ribbon { font-size: .58rem; }
+      .writer-header { padding: .9rem 0; }
+      .brand img { width: 36px; height: 36px; }
+      .brand-name { font-size: 1.3rem; }
+      .save-status { font-size: .63rem; }
+      .writer-main { width: min(94%, 880px); padding-top: 2.2rem; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); }
+      .capture-card, .review-card { border-radius: 18px; }
+      .thought-input { min-height: 46vh; }
+      .photo-row { align-items: flex-start; flex-direction: column; }
+      .action-row { position: sticky; bottom: .65rem; z-index: 8; padding: .7rem; margin-left: -.35rem; margin-right: -.35rem; border: 1px solid rgba(139,110,90,.13); border-radius: 16px; background: rgba(246,242,237,.93); backdrop-filter: blur(10px); }
+      .action-row .primary-button { flex: 1; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .article-editor { min-height: 48vh; padding: 1rem; }
+      .review-card { padding: 1rem; }
+      .success-actions { flex-direction: column; }
+      .success-actions button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype-ribbon">Functional prototype · nothing here publishes to GitHub</div>
+  <div class="writer-shell">
+    <header class="writer-header">
+      <a class="brand" href="#" id="brandHome" aria-label="Latte and Lounge Writer home">
+        <img src="https://raw.githubusercontent.com/jeffthomasiii/latte-lounge-poc/main/docs/assets/images/favicon.svg" alt="">
+        <span>
+          <span class="brand-name">Latte &amp; Lounge</span>
+          <span class="brand-tool">Writer</span>
+        </span>
+      </a>
+      <span class="save-status" id="saveStatus">Draft saved on this device</span>
+    </header>
+
+    <main class="writer-main">
+      <section class="step" id="captureStep">
+        <p class="eyebrow">A sacred pause before the world gets loud.</p>
+        <h1>What’s on your heart today?</h1>
+        <p class="lead">Share the thought in your own words. Don’t worry about the title, structure, Scripture formatting, or how it will appear on the site.</p>
+
+        <div class="capture-card">
+          <div class="mode-switch" role="group" aria-label="Choose how to capture your thought">
+            <button class="mode-button active" type="button" data-mode="talk">🎙 Talk</button>
+            <button class="mode-button" type="button" data-mode="write">Write</button>
+          </div>
+
+          <div class="dictation-note" id="dictationNote">
+            <span aria-hidden="true">🎙</span>
+            <span>Tap into the writing area, then use the microphone on your phone’s keyboard. Just talk naturally—we’ll worry about the article later.</span>
+          </div>
+
+          <textarea class="thought-input" id="rawInput" placeholder="Start wherever the thought begins…"></textarea>
+          <div class="capture-meta">
+            <span id="wordCount">0 words</span>
+            <span>Saved automatically</span>
+          </div>
+
+          <div class="photo-row">
+            <label class="photo-button" for="photoInput">＋ Add a photo</label>
+            <input class="hidden" id="photoInput" type="file" accept="image/*">
+            <span class="photo-name" id="photoName">Optional</span>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-button" id="prepareButton" type="button">Prepare My Article</button>
+          </div>
+
+          <div class="prototype-helper">
+            <button class="text-button" id="loadSample" type="button">Load a sample thought for testing</button>
+          </div>
+          <div class="notice hidden" id="captureNotice"></div>
+        </div>
+      </section>
+
+      <section class="step hidden" id="reviewStep">
+        <div class="review-header">
+          <p class="eyebrow">Prepared for you</p>
+          <h2>Here’s your article.</h2>
+          <p class="lead">Read it through. Change anything that doesn’t sound like you. Nothing is public until you choose Publish.</p>
+        </div>
+
+        <div class="review-card">
+          <label class="field-label" for="titleInput">Suggested title</label>
+          <input class="title-input" id="titleInput" type="text" value="">
+
+          <div class="suggestion-card" id="scriptureSuggestion">
+            <strong>Suggested Scripture</strong>
+            <p><span id="scriptureText">Philippians 4:6–7 · NIV</span><br><span id="scriptureReason">This passage supports the reflection’s movement from pressure toward prayer and peace.</span></p>
+            <div class="suggestion-actions">
+              <button class="mini-button" id="acceptScripture" type="button">Use This</button>
+              <button class="mini-button" id="removeScripture" type="button">No Scripture</button>
+            </div>
+          </div>
+
+          <span class="field-label">Article</span>
+          <div class="editor-toolbar" aria-label="Formatting tools">
+            <button class="tool-button" type="button" data-command="bold" aria-label="Bold"><strong>B</strong></button>
+            <button class="tool-button" type="button" data-command="italic" aria-label="Italic"><em>I</em></button>
+            <button class="tool-button" type="button" data-command="formatBlock" data-value="h2" aria-label="Heading">H</button>
+            <button class="tool-button" type="button" data-command="insertUnorderedList" aria-label="Bulleted list">•</button>
+          </div>
+          <div class="article-editor" id="articleEditor" contenteditable="true" spellcheck="true"></div>
+
+          <div class="suggestion-card" id="prayerSuggestion">
+            <strong>Suggested closing prayer</strong>
+            <p id="prayerText">Lord, help me bring You what is real before I begin carrying what this day asks of me. Give me wisdom for what is mine to do, peace for what I cannot control, and grace to walk through today anchored in You. Amen.</p>
+            <div class="suggestion-actions">
+              <button class="mini-button" id="acceptPrayer" type="button">Add Prayer</button>
+              <button class="mini-button" id="removePrayer" type="button">No Prayer</button>
+            </div>
+          </div>
+
+          <details class="article-details">
+            <summary>Article Details</summary>
+            <div class="detail-grid">
+              <div class="detail-item"><span>Content Series</span><strong id="pillarDetail">Anchored Living</strong></div>
+              <div class="detail-item"><span>Short Description</span><strong id="excerptDetail">Generated automatically from the heart of the article.</strong></div>
+              <div class="detail-item"><span>Featured Image</span><strong id="imageDetail">Site fallback image</strong></div>
+              <div class="detail-item"><span>Publication</span><strong>Publish when you’re ready</strong></div>
+            </div>
+          </details>
+
+          <div class="action-row">
+            <button class="ghost-button" id="backButton" type="button">Go Back</button>
+            <button class="secondary-button" id="saveDraftButton" type="button">Save Draft</button>
+            <button class="primary-button" id="publishButton" type="button">Publish</button>
+          </div>
+          <div class="notice hidden" id="reviewNotice"></div>
+        </div>
+      </section>
+
+      <section class="step hidden" id="publishedStep">
+        <div class="success-card">
+          <div class="success-mark">✓</div>
+          <p class="eyebrow">Ready to share</p>
+          <h2>Your reflection is live.</h2>
+          <p>That’s the whole publishing experience. In the real Writer, this is where the approved article would be sent through the Latte &amp; Lounge publishing workflow.</p>
+          <p class="mock-note">Prototype only: no file was created and nothing was sent to GitHub.</p>
+          <div class="success-actions">
+            <button class="secondary-button" id="viewArticleButton" type="button">View Article Preview</button>
+            <button class="primary-button" id="startAnotherButton" type="button">Start Another</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="step hidden" id="articlePreviewStep">
+        <div class="review-header">
+          <p class="eyebrow" id="previewPillar">Latte &amp; Lounge Reflection</p>
+          <h2 id="previewTitle"></h2>
+          <p class="lead" id="previewExcerpt"></p>
+        </div>
+        <div class="review-card">
+          <div class="article-editor" id="previewBody" contenteditable="false"></div>
+          <div class="action-row">
+            <button class="primary-button" id="backToPublishedButton" type="button">Done</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="loading-layer hidden" id="loadingLayer" aria-live="polite">
+    <div class="loading-content">
+      <div class="loading-cup">☕</div>
+      <h2>Preparing your reflection…</h2>
+      <p>Keeping your voice, organizing the thought, and getting the details out of your way.</p>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const STORAGE_KEY = 'latte-lounge-writer-prototype-v1';
+      const sample = `This morning I woke up thinking about everything I needed to get done before I even got out of bed. I had a meeting I was worried about, emails I knew were waiting for me, and a conversation I really did not want to have. I realized I was already carrying the whole day before I had even given any of it to God.\n\nI think a lot of us do that. We love God, but responsibility gets loud fast. Sometimes prayer becomes the thing we plan to get to after we have already started solving everything ourselves. What I kept thinking was that maybe the sacred pause is not about having a perfect quiet morning. Maybe it is just stopping long enough to tell God what is actually true before the day starts telling us what matters.\n\nI want women to know they can bring the meeting, the pressure, the family stuff, all of it to God before they start trying to carry it alone.`;
+
+      const $ = (id) => document.getElementById(id);
+      const steps = ['captureStep','reviewStep','publishedStep','articlePreviewStep'];
+      let scriptureAccepted = false;
+      let prayerAccepted = false;
+      let photoLabel = '';
+
+      function showStep(id) {
+        steps.forEach(step => $(step).classList.toggle('hidden', step !== id));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function saveLocal(extra = {}) {
+        const state = {
+          rawInput: $('rawInput').value,
+          title: $('titleInput').value,
+          article: $('articleEditor').innerHTML,
+          scriptureAccepted,
+          prayerAccepted,
+          photoLabel,
+          ...extra
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        $('saveStatus').textContent = 'Draft saved on this device';
+      }
+
+      function restoreLocal() {
+        try {
+          const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+          if (state.rawInput) $('rawInput').value = state.rawInput;
+          updateWordCount();
+        } catch (_) {}
+      }
+
+      function updateWordCount() {
+        const words = $('rawInput').value.trim().match(/\S+/g) || [];
+        $('wordCount').textContent = `${words.length} ${words.length === 1 ? 'word' : 'words'}`;
+      }
+
+      function classify(text) {
+        const lower = text.toLowerCase();
+        if (/work|meeting|boss|coworker|leadership|office|career|professional/.test(lower)) return 'Faith in the Boardroom';
+        if (/morning|wake|woke|before i got out|start the day|phone/.test(lower)) return 'Before the World Wakes';
+        if (/prayer|pray|stillness|pause|quiet|overwhelmed/.test(lower) && text.length < 900) return 'Sacred Pause';
+        if (/scripture|bible|verse|psalm|proverbs|jesus said/.test(lower)) return 'Scripture & Sips';
+        if (/burnout|marriage|mother|friend|lonely|identity|grief|boundary/.test(lower)) return 'Lounge Conversations';
+        return 'Anchored Living';
+      }
+
+      function titleFrom(text) {
+        const lower = text.toLowerCase();
+        if (/carry|carrying|whole day|everything/.test(lower) && /morning|woke|wake/.test(lower)) return 'Before You Carry the Whole Day';
+        if (/rest/.test(lower) && /guilt|guilty|responsib/.test(lower)) return 'When Rest Feels Irresponsible';
+        if (/meeting/.test(lower) && /worried|anxious|pressure/.test(lower)) return 'Before the Meeting Gets the First Word';
+        if (/quiet|pause|still/.test(lower)) return 'The Sacred Pause We Actually Need';
+        return 'What We Carry Before the Day Begins';
+      }
+
+      function excerptFrom(text) {
+        const sentences = text.replace(/\s+/g, ' ').match(/[^.!?]+[.!?]+/g) || [];
+        const base = (sentences.slice(0, 2).join(' ') || text).trim();
+        if (base.length > 190) return base.slice(0, 187).trim() + '…';
+        return base || 'A reflection prepared from what is on your heart today.';
+      }
+
+      function paragraphsFrom(text) {
+        const blocks = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+        const safe = (s) => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+        let html = blocks.map(p => `<p>${safe(p)}</p>`).join('');
+        if (!html) html = '<p>Start with what is true.</p>';
+        if (blocks.length >= 2) {
+          const midpoint = Math.max(1, Math.floor(blocks.length / 2));
+          html = blocks.map((p, i) => `${i === midpoint ? '<h2>The shift</h2>' : ''}<p>${safe(p)}</p>`).join('');
+        }
+        return html;
+      }
+
+      function prepareMock() {
+        const text = $('rawInput').value.trim();
+        const wordCount = (text.match(/\S+/g) || []).length;
+        $('captureNotice').classList.add('hidden');
+
+        if (wordCount < 35) {
+          $('captureNotice').innerHTML = `<strong>You’ve got the beginning of something here.</strong><br>Keep talking a little longer so the Writer has enough of your thought to preserve your voice instead of filling in the gaps.`;
+          $('captureNotice').classList.remove('hidden');
+          return;
+        }
+
+        $('loadingLayer').classList.remove('hidden');
+        setTimeout(() => {
+          const pillar = classify(text);
+          const title = titleFrom(text);
+          const excerpt = excerptFrom(text);
+          $('titleInput').value = title;
+          $('pillarDetail').textContent = pillar;
+          $('excerptDetail').textContent = excerpt;
+          $('imageDetail').textContent = photoLabel || 'Site fallback image';
+          $('articleEditor').innerHTML = paragraphsFrom(text);
+          scriptureAccepted = false;
+          prayerAccepted = false;
+          $('acceptScripture').classList.remove('accepted');
+          $('acceptPrayer').classList.remove('accepted');
+          $('scriptureSuggestion').classList.remove('hidden');
+          $('prayerSuggestion').classList.remove('hidden');
+          $('loadingLayer').classList.add('hidden');
+          saveLocal({ pillar, excerpt });
+          showStep('reviewStep');
+        }, 950);
+      }
+
+      document.querySelectorAll('.mode-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.mode-button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const talk = btn.dataset.mode === 'talk';
+          $('dictationNote').classList.toggle('hidden', !talk);
+          $('rawInput').focus();
+        });
+      });
+
+      $('rawInput').addEventListener('input', () => { updateWordCount(); saveLocal(); });
+      $('titleInput').addEventListener('input', saveLocal);
+      $('articleEditor').addEventListener('input', saveLocal);
+
+      $('photoInput').addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        photoLabel = file ? file.name : '';
+        $('photoName').textContent = photoLabel || 'Optional';
+        saveLocal();
+      });
+
+      $('loadSample').addEventListener('click', () => {
+        $('rawInput').value = sample;
+        updateWordCount();
+        saveLocal();
+        $('rawInput').focus();
+      });
+
+      $('prepareButton').addEventListener('click', prepareMock);
+      $('backButton').addEventListener('click', () => showStep('captureStep'));
+      $('brandHome').addEventListener('click', (e) => { e.preventDefault(); showStep('captureStep'); });
+
+      $('acceptScripture').addEventListener('click', () => {
+        scriptureAccepted = true;
+        $('acceptScripture').classList.add('accepted');
+        $('acceptScripture').textContent = '✓ Scripture Added';
+        saveLocal();
+      });
+      $('removeScripture').addEventListener('click', () => {
+        scriptureAccepted = false;
+        $('scriptureSuggestion').classList.add('hidden');
+        saveLocal();
+      });
+
+      $('acceptPrayer').addEventListener('click', () => {
+        if (!prayerAccepted) {
+          $('articleEditor').insertAdjacentHTML('beforeend', `<h2>Prayer</h2><p>${$('prayerText').textContent}</p>`);
+        }
+        prayerAccepted = true;
+        $('acceptPrayer').classList.add('accepted');
+        $('acceptPrayer').textContent = '✓ Prayer Added';
+        saveLocal();
+      });
+      $('removePrayer').addEventListener('click', () => {
+        prayerAccepted = false;
+        $('prayerSuggestion').classList.add('hidden');
+        saveLocal();
+      });
+
+      document.querySelectorAll('.tool-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const cmd = button.dataset.command;
+          const value = button.dataset.value || null;
+          document.execCommand(cmd, false, value);
+          $('articleEditor').focus();
+          saveLocal();
+        });
+      });
+
+      $('saveDraftButton').addEventListener('click', () => {
+        saveLocal();
+        $('reviewNotice').textContent = 'Draft saved on this device. In the real Writer, Save Draft will also protect it for later access.';
+        $('reviewNotice').classList.remove('hidden');
+      });
+
+      $('publishButton').addEventListener('click', () => {
+        if (!$('titleInput').value.trim() || !$('articleEditor').innerText.trim()) {
+          $('reviewNotice').textContent = 'Your reflection still needs a title and article text before it can be published.';
+          $('reviewNotice').classList.remove('hidden');
+          return;
+        }
+        $('reviewNotice').classList.add('hidden');
+        $('loadingLayer').querySelector('h2').textContent = 'Publishing your reflection…';
+        $('loadingLayer').querySelector('p').textContent = 'Prototype only—simulating the final publishing handoff.';
+        $('loadingLayer').classList.remove('hidden');
+        setTimeout(() => {
+          $('loadingLayer').classList.add('hidden');
+          $('loadingLayer').querySelector('h2').textContent = 'Preparing your reflection…';
+          $('loadingLayer').querySelector('p').textContent = 'Keeping your voice, organizing the thought, and getting the details out of your way.';
+          saveLocal();
+          showStep('publishedStep');
+        }, 750);
+      });
+
+      $('viewArticleButton').addEventListener('click', () => {
+        $('previewPillar').textContent = $('pillarDetail').textContent;
+        $('previewTitle').textContent = $('titleInput').value;
+        $('previewExcerpt').textContent = $('excerptDetail').textContent;
+        let body = $('articleEditor').innerHTML;
+        if (scriptureAccepted) body = `<p><strong>${$('scriptureText').textContent}</strong></p>` + body;
+        $('previewBody').innerHTML = body;
+        showStep('articlePreviewStep');
+      });
+      $('backToPublishedButton').addEventListener('click', () => showStep('publishedStep'));
+
+      $('startAnotherButton').addEventListener('click', () => {
+        localStorage.removeItem(STORAGE_KEY);
+        $('rawInput').value = '';
+        $('titleInput').value = '';
+        $('articleEditor').innerHTML = '';
+        $('photoInput').value = '';
+        $('photoName').textContent = 'Optional';
+        photoLabel = '';
+        scriptureAccepted = false;
+        prayerAccepted = false;
+        updateWordCount();
+        showStep('captureStep');
+      });
+
+      restoreLocal();
+    })();
+  </script>
+</body>
+</html>
