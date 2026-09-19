@@ -20,7 +20,7 @@ layout: default
       <div class="ll-mobile-hero-content">
         <p class="ll-mobile-kicker">A sacred pause before the world gets loud.</p>
         <h1>Pause.<br>Pour.<br>Breathe.</h1>
-        <p>Meet with God before the inbox, the decisions, and everyone who needs something from you.</p>
+        <p>Start with Scripture, prayer, and a quiet moment before the day begins asking things of you.</p>
         <div class="ll-mobile-hero-actions">
           {% if latest_post %}
             <a class="ll-mobile-button ll-mobile-button--primary" href="{{ latest_post.url | relative_url }}">Read Today’s Reflection <span aria-hidden="true">→</span></a>
@@ -36,9 +36,26 @@ layout: default
       </div>
     </div>
 
+    <div class="ll-mobile-action-grid" aria-label="Morning shortcuts">
+      <a class="ll-mobile-action-card" href="{{ '/podcast/' | relative_url }}">
+        <span class="ll-mobile-action-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0v5.25A1.75 1.75 0 0 1 17.25 19H15v-6h4M5 13h4v6H6.75A1.75 1.75 0 0 1 5 17.25V12Z"/></svg>
+        </span>
+        <span><strong>Listen</strong><small>Podcast &amp; audio reflections</small></span>
+        <span class="ll-mobile-action-chevron" aria-hidden="true">›</span>
+      </a>
+
+      <a class="ll-mobile-action-card" href="{{ '/prayer-resources/' | relative_url }}">
+        <span class="ll-mobile-action-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 20.5s-7-4.1-7-10.1A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.4c0 6-7 10.1-7 10.1Z"/></svg>
+        </span>
+        <span><strong>Pray</strong><small>Find a prayer for today</small></span>
+        <span class="ll-mobile-action-chevron" aria-hidden="true">›</span>
+      </a>
+    </div>
     <div class="ll-mobile-today">
       <div class="ll-mobile-section-heading">
-        <h2>Today at Latte &amp; Lounge</h2>
+        <h2>Explore Latte &amp; Lounge</h2>
         <a href="{{ '/blog/' | relative_url }}">See All</a>
       </div>
       <div class="ll-mobile-quick-grid">
