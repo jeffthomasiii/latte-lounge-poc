@@ -529,7 +529,18 @@ Use five truthful destinations:
 - Read
 - Listen
 - Pray
-- About
+- More
+
+**More** is the mobile utility hub. It should contain secondary destinations and device-local controls that do not deserve a permanent primary-navigation slot, including:
+
+- Saved reflections
+- About Samatra
+- Latte & Lounge information
+- Reading-size preferences
+- App refresh/update controls
+- Contact/support
+
+Do not duplicate the bottom navigation with a mobile hamburger menu. On phone layouts and in the installed PWA, the bottom navigation is the primary app navigation.
 
 Do not use Journal, Profile, Notifications, or other app conventions until those destinations or behaviors actually exist.
 
