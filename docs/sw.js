@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-const CACHE_NAME = 'latte-lounge-mobile-v1';
+const CACHE_NAME = 'latte-lounge-mobile-v2';
 const BASE = '{{ site.baseurl }}';
 const APP_SHELL = [
   BASE + '/',
@@ -9,6 +9,7 @@ const APP_SHELL = [
   BASE + '/podcast/',
   BASE + '/prayer-resources/',
   BASE + '/about/',
+  BASE + '/more/',
   BASE + '/assets/css/mobile-pwa-refresh.css',
   BASE + '/assets/js/pwa.js',
   BASE + '/assets/images/favicon.svg',
