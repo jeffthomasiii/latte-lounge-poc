@@ -431,3 +431,110 @@ Before merging a website change, verify:
 - Focus, hover, and active states are present.
 - No future service is presented as currently available.
 - The page still feels calm, honest, and recognizably Latte & Lounge.
+
+
+---
+
+## 17. Mobile & PWA Experience Standard
+
+**Status:** Approved direction — September 2026
+
+The approved mobile mockup is the visual and UX benchmark for the Latte & Lounge phone and installed-PWA experience. Mobile should feel like a purpose-built application, not a desktop website compressed into a narrow viewport.
+
+### Core experience
+
+- Use a compact, persistent app shell.
+- Use a fixed bottom navigation for the primary mobile destinations.
+- Keep the top brand bar quiet, minimal, and app-like.
+- Treat the mobile homepage as a dashboard rather than a long marketing page.
+- Prioritize three core mobile modes: **Home**, **Reading**, and **Listening**.
+- Keep touch targets generous, cards rounded, spacing calm, and hierarchy immediate.
+- Preserve truthful functionality. Do not add decorative controls that imply unavailable features.
+
+### Mobile visual benchmark
+
+The phone experience should closely reproduce the approved mockup's character:
+
+- warm cream app background;
+- full-bleed or near-full-bleed lifestyle photography;
+- editorial serif headlines;
+- clean sans-serif interface text;
+- soft mocha / espresso depth;
+- terracotta action moments;
+- muted-gold detail used sparingly;
+- softly rounded cards and media surfaces;
+- minimal borders;
+- subtle elevation rather than heavy shadows;
+- generous but efficient mobile spacing;
+- premium, quiet-luxury presentation.
+
+This continues the official palette and typography system rather than creating a separate mobile brand.
+
+### Mobile homepage
+
+The mobile homepage should open with a strong visual ritual moment, followed by a compact set of useful destinations. It should not reproduce every desktop homepage section.
+
+Preferred sequence:
+
+1. Brand/app bar.
+2. Immersive hero.
+3. Primary reflection action.
+4. Podcast action.
+5. Three-card "Today at Latte & Lounge" row.
+6. Brand promise.
+7. Persistent bottom navigation.
+
+### Reading experience
+
+Reflection pages should feel like a dedicated reader:
+
+- artwork first;
+- category / series label;
+- strong editorial title;
+- compact metadata;
+- comfortable reading measure and line height;
+- Scripture, quotes, and callouts treated as calm editorial blocks;
+- optional save/share utilities when functional;
+- minimal competing navigation while reading.
+
+### Listening experience
+
+Podcast episode pages should feel like a media destination:
+
+- prominent episode artwork;
+- clear episode title and metadata;
+- audio controls treated as the focal interaction when audio exists;
+- transparent preview state when audio does not yet exist;
+- episode description and reflection content beneath the player;
+- bottom navigation remains available.
+
+### PWA behavior
+
+The site should support an installed-app experience with:
+
+- a web app manifest;
+- standalone display mode;
+- brand theme/background colors;
+- service-worker registration;
+- a reliable app shell;
+- mobile-safe-area handling;
+- network-first document loading so current content remains fresh;
+- selective caching of stable brand assets for resilience.
+
+### Bottom navigation
+
+Use five truthful destinations:
+
+- Home
+- Read
+- Listen
+- Pray
+- About
+
+Do not use Journal, Profile, Notifications, or other app conventions until those destinations or behaviors actually exist.
+
+### Desktop relationship
+
+Desktop remains editorial and spacious. The mobile/PWA layer may intentionally use a different information hierarchy and navigation model while retaining the same content, brand system, and URLs.
+
+The goal is not visual sameness across breakpoints. The goal is unmistakable Latte & Lounge consistency with a genuinely mobile-native experience.
