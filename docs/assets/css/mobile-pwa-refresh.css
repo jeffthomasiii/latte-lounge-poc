@@ -1,0 +1,635 @@
+/* =========================================================
+   Latte & Lounge — Mobile / PWA Experience Refresh
+   Approved visual benchmark: September 2026 mobile mockup.
+   This layer intentionally loads last and only changes phone UX.
+   ========================================================= */
+
+.ll-mobile-dashboard,
+.mobile-app-nav,
+.mobile-reading-toolbar,
+.podcast-mobile-art {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --ll-mobile-cream: #F6F2ED;
+    --ll-mobile-latte: #E7D6C2;
+    --ll-mobile-mocha: #8B6E5A;
+    --ll-mobile-taupe: #8B7D6B;
+    --ll-mobile-gold: #C8A668;
+    --ll-mobile-terracotta: #D36A5C;
+    --ll-mobile-ink: #3B2B24;
+    --ll-mobile-paper: #FFFCF8;
+    --ll-mobile-shadow: 0 10px 30px rgba(59, 43, 36, 0.09);
+  }
+
+  html {
+    background: var(--ll-mobile-cream);
+    scroll-padding-top: 68px;
+  }
+
+  body {
+    background: var(--ll-mobile-cream);
+    color: var(--ll-mobile-ink);
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .site-main {
+    overflow: clip;
+  }
+
+  /* App-like top bar */
+  .site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 1100;
+    background: rgba(246, 242, 237, 0.94);
+    border-bottom: 1px solid rgba(139, 110, 90, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .header-inner.simple-header {
+    min-height: 58px;
+    width: 100%;
+    padding: max(0.55rem, env(safe-area-inset-top)) 1rem 0.55rem !important;
+    gap: 0.65rem;
+    justify-content: space-between;
+  }
+
+  .site-header .image-logo {
+    width: auto;
+    max-width: 164px !important;
+    margin: 0;
+  }
+
+  .site-header .image-logo img {
+    width: 100%;
+    max-height: 34px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .site-nav-desktop {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: block !important;
+    margin-left: auto;
+  }
+
+  .mobile-nav-toggle {
+    width: 42px;
+    height: 42px;
+    border: 0 !important;
+    border-radius: 999px;
+    background: transparent !important;
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile-nav[open] .mobile-nav-panel {
+    top: 58px;
+    right: 0.85rem;
+    left: 0.85rem;
+    width: auto;
+    padding: 0.65rem;
+    border: 1px solid rgba(139, 110, 90, 0.14);
+    border-radius: 20px;
+    background: rgba(255, 252, 248, 0.98);
+    box-shadow: var(--ll-mobile-shadow);
+  }
+
+  .mobile-nav-link {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+    padding: 0.65rem 0.8rem;
+  }
+
+  /* Fixed app navigation */
+  .mobile-app-nav {
+    position: fixed;
+    z-index: 1200;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 68px;
+    padding: 7px 10px calc(7px + env(safe-area-inset-bottom));
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    background: rgba(255, 252, 248, 0.96);
+    border-top: 1px solid rgba(139, 110, 90, 0.14);
+    box-shadow: 0 -8px 24px rgba(59, 43, 36, 0.06);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .mobile-app-nav__item {
+    min-width: 0;
+    min-height: 54px;
+    color: var(--ll-mobile-taupe);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 13px;
+    font-family: "Montserrat", "Avenir Next", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .mobile-app-nav__item svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .mobile-app-nav__item.is-active {
+    color: var(--ll-mobile-ink);
+    background: rgba(231, 214, 194, 0.42);
+  }
+
+  .mobile-app-nav__item.is-active svg {
+    color: #7A4638;
+    stroke-width: 1.9;
+  }
+
+  /* In the app shell, bottom nav replaces the full marketing footer. */
+  .site-footer {
+    display: none;
+  }
+
+  /* Mobile home is a purpose-built dashboard, not a stacked desktop page. */
+  body.is-home .ll-mobile-dashboard {
+    display: block;
+    padding-bottom: 1.1rem;
+  }
+
+  body.is-home .ll-home > section:not(.ll-mobile-dashboard) {
+    display: none !important;
+  }
+
+  .ll-mobile-hero-card {
+    position: relative;
+    min-height: min(62vh, 530px);
+    overflow: hidden;
+    background: #4B382F;
+  }
+
+  .ll-mobile-hero-card > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ll-mobile-hero-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(32, 22, 17, 0.12) 8%, rgba(32, 22, 17, 0.18) 35%, rgba(32, 22, 17, 0.78) 100%);
+  }
+
+  .ll-mobile-hero-content {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1.3rem 1.4rem;
+    color: #fff;
+  }
+
+  .ll-mobile-kicker {
+    margin: 0 0 0.65rem;
+    font-family: "Montserrat", "Avenir Next", sans-serif;
+    font-size: 0.69rem;
+    line-height: 1.4;
+    font-weight: 650;
+    letter-spacing: 0.105em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .ll-mobile-hero-content h1 {
+    margin: 0 0 0.75rem;
+    max-width: 8ch;
+    color: #fff;
+    font-family: "Cormorant Garamond", "Canela", Georgia, serif;
+    font-size: clamp(3.3rem, 15vw, 4.65rem);
+    line-height: 0.82;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .ll-mobile-hero-content > p:not(.ll-mobile-kicker) {
+    margin: 0;
+    max-width: 32ch;
+    color: rgba(255,255,255,0.94);
+    font-size: 0.97rem;
+    line-height: 1.5;
+  }
+
+  .ll-mobile-hero-actions {
+    margin-top: 1.1rem;
+    display: grid;
+    gap: 0.62rem;
+  }
+
+  .ll-mobile-button {
+    min-height: 48px;
+    border-radius: 999px;
+    padding: 0.78rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: "Montserrat", "Avenir Next", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+  }
+
+  .ll-mobile-button--primary {
+    background: #7A4638;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(48, 27, 21, 0.22);
+  }
+
+  .ll-mobile-button--secondary {
+    background: rgba(255,252,248,0.94);
+    color: var(--ll-mobile-ink);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .ll-mobile-play {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #7A4638;
+    color: #fff;
+    font-size: 0.58rem;
+    padding-left: 1px;
+  }
+
+  .ll-mobile-today {
+    padding: 1.05rem 1rem 0;
+    background: var(--ll-mobile-paper);
+  }
+
+  .ll-mobile-section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.72rem;
+  }
+
+  .ll-mobile-section-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", "Canela", Georgia, serif;
+    font-size: 1.22rem;
+    line-height: 1.1;
+    color: var(--ll-mobile-ink);
+  }
+
+  .ll-mobile-section-heading a {
+    color: #7A4638;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .ll-mobile-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .ll-mobile-quick-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(139, 110, 90, 0.12);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--ll-mobile-ink);
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(59, 43, 36, 0.045);
+  }
+
+  .ll-mobile-quick-card img {
+    width: 100%;
+    aspect-ratio: 1.1 / 0.78;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ll-mobile-quick-title,
+  .ll-mobile-quick-copy {
+    display: block;
+    padding-inline: 0.55rem;
+  }
+
+  .ll-mobile-quick-title {
+    padding-top: 0.52rem;
+    font-family: "Cormorant Garamond", "Canela", Georgia, serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .ll-mobile-quick-copy {
+    padding-top: 0.28rem;
+    padding-bottom: 0.62rem;
+    color: var(--ll-mobile-taupe);
+    font-size: 0.62rem;
+    line-height: 1.32;
+  }
+
+  .ll-mobile-home-promise {
+    margin: 1rem auto 0;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    font-family: "Cormorant Garamond", "Canela", Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ll-mobile-mocha);
+  }
+
+  /* Reflection reader */
+  body.layout-post .editorial-post-hero {
+    padding: 0;
+    background: var(--ll-mobile-paper);
+  }
+
+  body.layout-post .editorial-post-hero .container {
+    width: 100%;
+  }
+
+  body.layout-post .editorial-post-hero__grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0 !important;
+  }
+
+  body.layout-post .editorial-post-hero__media {
+    order: -1;
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 22px 22px;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  body.layout-post .editorial-post-hero__media img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+  }
+
+  body.layout-post .editorial-post-hero__copy {
+    padding: 1rem 1rem 0.85rem;
+  }
+
+  body.layout-post .editorial-post-hero__copy h1 {
+    margin-top: 0.38rem;
+    margin-bottom: 0.65rem;
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+  }
+
+  body.layout-post .editorial-post-deck {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--ll-mobile-taupe);
+  }
+
+  body.layout-post .editorial-post-meta {
+    gap: 0.42rem 0.65rem;
+    font-size: 0.67rem;
+  }
+
+  .mobile-reading-toolbar {
+    width: calc(100% - 2rem);
+    margin: 0 auto 0.85rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .mobile-reading-action {
+    min-height: 40px;
+    border: 1px solid rgba(139, 110, 90, 0.15);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ll-mobile-mocha);
+    padding: 0.45rem 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.36rem;
+    font: 650 0.68rem/1 "Montserrat", "Avenir Next", sans-serif;
+  }
+
+  .mobile-reading-action svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .mobile-reading-action[aria-pressed="true"] {
+    background: rgba(231, 214, 194, 0.6);
+    color: #6E3B30;
+  }
+
+  body.layout-post .editorial-post-layout {
+    width: 100%;
+    display: block;
+    padding: 0 1rem;
+  }
+
+  body.layout-post .editorial-post-aside {
+    display: none;
+  }
+
+  body.layout-post .editorial-post-body {
+    max-width: none;
+    font-size: 1.03rem;
+    line-height: 1.72;
+    color: #40322C;
+  }
+
+  body.layout-post .editorial-post-body > p:first-child {
+    font-size: 1.08rem;
+  }
+
+  body.layout-post .post-content h2 {
+    margin-top: 2rem;
+    font-size: 1.85rem;
+    line-height: 1.05;
+  }
+
+  body.layout-post .post-content blockquote {
+    margin: 1.35rem 0;
+    padding: 1rem 1rem 1rem 1.1rem;
+    border-left: 3px solid var(--ll-mobile-terracotta);
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(135deg, rgba(231,214,194,0.5), rgba(246,242,237,0.78));
+    color: #5A4338;
+    font-family: "Cormorant Garamond", "Canela", Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  body.layout-post .editorial-post-footer {
+    padding: 0 1rem 1rem;
+  }
+
+  body.layout-post .editorial-newsletter-panel {
+    width: 100%;
+    border-radius: 20px;
+    padding: 1.15rem;
+    background: var(--ll-mobile-latte);
+  }
+
+  /* Podcast episode = media screen */
+  .podcast-mobile-art {
+    width: calc(100% - 2rem);
+    margin: 0.95rem auto 0;
+    display: block;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--ll-mobile-shadow);
+  }
+
+  .podcast-mobile-art img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
+
+  body.layout-podcast .podcast-episode > .container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  body.layout-podcast .podcast-episode h1 {
+    margin: 0.3rem 0 0.55rem;
+    font-size: clamp(2.2rem, 11vw, 3.15rem);
+    line-height: 0.98;
+  }
+
+  body.layout-podcast .podcast-player,
+  body.layout-podcast .content-status-note {
+    border-radius: 18px;
+    border: 1px solid rgba(139, 110, 90, 0.14);
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(59,43,36,0.05);
+  }
+
+  body.layout-podcast .podcast-player {
+    padding: 0.75rem;
+  }
+
+  body.layout-podcast .podcast-player audio {
+    width: 100%;
+  }
+
+  body.layout-podcast .post-content {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  /* Podcast index and editorial collection pages */
+  body.page-podcast .editorial-page-hero,
+  body.page-reflections .editorial-page-hero,
+  body.page-prayer-resources .editorial-page-hero,
+  body.page-about .editorial-page-hero {
+    padding-top: 1rem;
+  }
+
+  body.page-podcast .collection-feature-strip,
+  body.page-podcast .collection-status-panel,
+  body.page-reflections .collection-card,
+  body.page-prayer-resources .collection-card {
+    border-radius: 20px;
+  }
+
+  body.page-podcast .collection-status-panel {
+    padding: 1.2rem;
+  }
+
+  /* Standalone PWA gets a slightly denser chrome and true app canvas. */
+  .pwa-standalone body {
+    overscroll-behavior-y: contain;
+  }
+
+  .pwa-standalone .site-header {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Accessibility / interaction */
+  .mobile-app-nav__item:focus-visible,
+  .ll-mobile-button:focus-visible,
+  .ll-mobile-quick-card:focus-visible,
+  .mobile-reading-action:focus-visible {
+    outline: 3px solid rgba(211, 106, 92, 0.35);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 370px) {
+  .ll-mobile-hero-content {
+    padding-inline: 1rem;
+  }
+
+  .ll-mobile-quick-grid {
+    gap: 0.42rem;
+  }
+
+  .ll-mobile-quick-title,
+  .ll-mobile-quick-copy {
+    padding-inline: 0.45rem;
+  }
+
+  .ll-mobile-quick-copy {
+    font-size: 0.58rem;
+  }
+
+  .mobile-app-nav {
+    padding-inline: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-app-nav *,
+  .ll-mobile-dashboard * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
