@@ -3,6 +3,10 @@ layout: default
 ---
 
 <article class="podcast-episode">
+  <figure class="podcast-mobile-art">
+    <img src="{{ '/assets/images/latte-lounge-podcast-feature.webp' | relative_url }}" alt="Latte & Lounge podcast artwork">
+  </figure>
+
   <div class="container narrow">
     <p class="eyebrow">{% if page.audio_url %}Podcast Episode{% else %}Episode Preview{% endif %}</p>
     <h1>{{ page.title }}</h1>
