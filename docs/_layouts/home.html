@@ -13,6 +13,65 @@ layout: default
 {% assign latest_post = site.posts | first %}
 
 <div class="ll-home">
+  <section class="ll-mobile-dashboard" aria-label="Latte & Lounge mobile home">
+    <div class="ll-mobile-hero-card">
+      <img src="{{ '/assets/images/latte-lounge-hero.webp' | relative_url }}" alt="Latte and journal in warm morning light">
+      <div class="ll-mobile-hero-shade" aria-hidden="true"></div>
+      <div class="ll-mobile-hero-content">
+        <p class="ll-mobile-kicker">A sacred pause before the world gets loud.</p>
+        <h1>Pause.<br>Pour.<br>Breathe.</h1>
+        <p>Meet with God before the inbox, the decisions, and everyone who needs something from you.</p>
+        <div class="ll-mobile-hero-actions">
+          {% if latest_post %}
+            <a class="ll-mobile-button ll-mobile-button--primary" href="{{ latest_post.url | relative_url }}">Read Today’s Reflection <span aria-hidden="true">→</span></a>
+          {% else %}
+            <a class="ll-mobile-button ll-mobile-button--primary" href="{{ '/blog/' | relative_url }}">Read a Reflection <span aria-hidden="true">→</span></a>
+          {% endif %}
+          {% if latest_episode %}
+            <a class="ll-mobile-button ll-mobile-button--secondary" href="{{ latest_episode.url | relative_url }}"><span class="ll-mobile-play" aria-hidden="true">▶</span> Listen Now</a>
+          {% else %}
+            <a class="ll-mobile-button ll-mobile-button--secondary" href="{{ '/podcast/' | relative_url }}"><span class="ll-mobile-play" aria-hidden="true">▶</span> Podcast Preview</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ll-mobile-today">
+      <div class="ll-mobile-section-heading">
+        <h2>Today at Latte &amp; Lounge</h2>
+        <a href="{{ '/blog/' | relative_url }}">See All</a>
+      </div>
+      <div class="ll-mobile-quick-grid">
+        {% if latest_post %}
+          <a class="ll-mobile-quick-card" href="{{ latest_post.url | relative_url }}">
+            <img src="{{ latest_post.image | default: '/assets/images/latte-lounge-reflection-feature.webp' | relative_url }}" alt="">
+            <span class="ll-mobile-quick-title">Reflection</span>
+            <span class="ll-mobile-quick-copy">{{ latest_post.title | truncate: 42 }}</span>
+          </a>
+        {% else %}
+          <a class="ll-mobile-quick-card" href="{{ '/blog/' | relative_url }}">
+            <img src="{{ '/assets/images/latte-lounge-reflection-feature.webp' | relative_url }}" alt="">
+            <span class="ll-mobile-quick-title">Reflection</span>
+            <span class="ll-mobile-quick-copy">Scripture and encouragement for real life.</span>
+          </a>
+        {% endif %}
+
+        <a class="ll-mobile-quick-card" href="{{ '/podcast/' | relative_url }}">
+          <img src="{{ '/assets/images/latte-lounge-podcast-feature.webp' | relative_url }}" alt="">
+          <span class="ll-mobile-quick-title">Podcast</span>
+          <span class="ll-mobile-quick-copy">Faith, work, leadership, and honest conversation.</span>
+        </a>
+
+        <a class="ll-mobile-quick-card" href="{{ '/prayer-resources/' | relative_url }}">
+          <img src="{{ '/assets/images/home-photo-candle-stillness.webp' | relative_url }}" alt="">
+          <span class="ll-mobile-quick-title">Prayer</span>
+          <span class="ll-mobile-quick-copy">A quiet reset before the day gets loud.</span>
+        </a>
+      </div>
+      <p class="ll-mobile-home-promise">Anchored instead of anxious.</p>
+    </div>
+  </section>
+
   <section class="ll-hero">
     <div class="container ll-hero-grid">
       <div class="ll-hero-copy">
