@@ -1,0 +1,40 @@
+---
+layout: null
+---
+{
+  "id": "{{ '/' | relative_url }}",
+  "name": "Latte & Lounge",
+  "short_name": "Latte & Lounge",
+  "description": "A sacred pause before the world gets loud.",
+  "start_url": "{{ '/' | relative_url }}",
+  "scope": "{{ '/' | relative_url }}",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F6F2ED",
+  "theme_color": "#F6F2ED",
+  "icons": [
+    {
+      "src": "{{ '/assets/images/favicon.svg' | relative_url }}",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Read",
+      "short_name": "Read",
+      "url": "{{ '/blog/' | relative_url }}"
+    },
+    {
+      "name": "Listen",
+      "short_name": "Listen",
+      "url": "{{ '/podcast/' | relative_url }}"
+    },
+    {
+      "name": "Pray",
+      "short_name": "Pray",
+      "url": "{{ '/prayer-resources/' | relative_url }}"
+    }
+  ]
+}
